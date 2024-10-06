@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+    <name>Fabled Cervidae</name>
+    <author>Scurvyez</author>
+    <packageId>Scurvyez.FabledCervidae</packageId>
+    <supportedVersions>
+        <li>1.5</li>
+    </supportedVersions>
+
+    <description>
+Discord: steveo.o
+steam: Scurvyez
+    </description>
+
+    <loadAfter>
+        <li>Ludeon.RimWorld</li>
+    </loadAfter>
+
+</ModMetaData>

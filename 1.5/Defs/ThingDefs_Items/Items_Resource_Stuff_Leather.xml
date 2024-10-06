@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <ThingDef ParentName="LeatherBase">
+        <defName>FC_Leather_Scire</defName>
+        <label>scire leather</label>
+        <description>A mysterious soft blue animal hide. Extremely durable and sought after by many. A great choice for armor and insulation from the cold.</description>
+        <burnableByRecipe>true</burnableByRecipe>
+        <healthAffectsPrice>true</healthAffectsPrice>
+        <minRewardCount>35</minRewardCount>
+        <graphicData>
+            <color>(0,150,252)</color>
+        </graphicData>
+        <statBases>
+            <MarketValue>8.5</MarketValue>
+            <StuffPower_Armor_Sharp>0.9</StuffPower_Armor_Sharp>
+            <StuffPower_Armor_Blunt>1.1</StuffPower_Armor_Blunt>
+            <StuffPower_Insulation_Cold>40</StuffPower_Insulation_Cold>
+            <StuffPower_Insulation_Heat>25</StuffPower_Insulation_Heat>
+            <DeteriorationRate>2.25</DeteriorationRate>
+            <MaxHitPoints>70</MaxHitPoints>
+            <Mass>0.04</Mass>
+        </statBases>
+        <stuffProps>
+            <color>(0,150,252)</color>
+            <commonality>0.075</commonality>
+            <statFactors>
+                <Beauty>2.75</Beauty>
+            </statFactors>
+            <categories>
+                <li>Leathery</li>
+            </categories>
+        </stuffProps>
+    </ThingDef>
+
+    <ThingDef ParentName="LeatherBase">
+        <defName>FC_Leather_Gleaming_Cervus</defName>
+        <label>gleaming cervus leather</label>
+        <description>The hide taken from a recently slain gleaming cervus. Its light purple hue shines vibrantly in the light of day. A great choice for deterring sharp irritants.</description>
+        <burnableByRecipe>true</burnableByRecipe>
+        <healthAffectsPrice>true</healthAffectsPrice>
+        <minRewardCount>35</minRewardCount>
+        <graphicData>
+            <color>(124,98,163)</color>
+        </graphicData>
+        <statBases>
+            <MarketValue>9.2</MarketValue>
+            <StuffPower_Armor_Sharp>1.85</StuffPower_Armor_Sharp>
+            <StuffPower_Armor_Blunt>0.33</StuffPower_Armor_Blunt>
+            <StuffPower_Insulation_Cold>30</StuffPower_Insulation_Cold>
+            <StuffPower_Insulation_Heat>21</StuffPower_Insulation_Heat>
+            <DeteriorationRate>1.25</DeteriorationRate>
+            <Flammability>12.15</Flammability>
+            <MaxHitPoints>140</MaxHitPoints>
+            <Mass>0.0675</Mass>
+        </statBases>
+        <stuffProps>
+            <color>(124,98,163)</color>
+            <commonality>0.075</commonality>
+            <statFactors>
+                <Beauty>4.25</Beauty>
+            </statFactors>
+            <categories>
+                <li>Leathery</li>
+            </categories>
+        </stuffProps>
+    </ThingDef>
+
+    <ThingDef ParentName="LeatherBase">
+        <defName>FC_Leather_Cinderstag</defName>
+        <label>cinderstag leather</label>
+        <description>The reddish, blood-like hide of a cinderstag. Much like devilstrand, this material is highly heat resistant.</description>
+        <burnableByRecipe>true</burnableByRecipe>
+        <healthAffectsPrice>true</healthAffectsPrice>
+        <minRewardCount>35</minRewardCount>
+        <graphicData>
+            <color>(255, 103, 0)</color>
+        </graphicData>
+        <statBases>
+            <MarketValue>5.85</MarketValue>
+            <StuffPower_Armor_Sharp>1.35</StuffPower_Armor_Sharp>
+            <StuffPower_Armor_Blunt>0.2</StuffPower_Armor_Blunt>
+            <StuffPower_Armor_Heat>4.1</StuffPower_Armor_Heat>
+            <StuffPower_Insulation_Cold>10</StuffPower_Insulation_Cold>
+            <StuffPower_Insulation_Heat>42</StuffPower_Insulation_Heat>
+            <DeteriorationRate>2.75</DeteriorationRate>
+            <Flammability>0.025</Flammability>
+            <MaxHitPoints>170</MaxHitPoints>
+            <Mass>0.035</Mass>
+        </statBases>
+        <stuffProps>
+            <color>(124,98,163)</color>
+            <commonality>0.075</commonality>
+            <statFactors>
+                <Flammability>0.6</Flammability>
+                <MaxHitPoints>1.5</MaxHitPoints>
+                <Beauty>2.9</Beauty>
+            </statFactors>
+            <categories>
+                <li>Leathery</li>
+            </categories>
+        </stuffProps>
+    </ThingDef>
+
+</Defs>
