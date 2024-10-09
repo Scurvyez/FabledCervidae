@@ -34,9 +34,9 @@
     </ThingDef>
 
     <ThingDef ParentName="LeatherBase">
-        <defName>FC_Leather_Gleaming_Cervus</defName>
-        <label>gleaming cervus leather</label>
-        <description>The hide taken from a recently slain gleaming cervus. Its light purple hue shines vibrantly in the light of day. A great choice for deterring sharp irritants.</description>
+        <defName>FC_Leather_Auravine</defName>
+        <label>auravine leather</label>
+        <description>The hide taken from a recently slain auravine. Its light purple hue shines vibrantly in the light of day. A great choice for deterring sharp irritants.</description>
         <burnableByRecipe>true</burnableByRecipe>
         <healthAffectsPrice>true</healthAffectsPrice>
         <minRewardCount>35</minRewardCount>
@@ -67,9 +67,9 @@
     </ThingDef>
 
     <ThingDef ParentName="LeatherBase">
-        <defName>FC_Leather_Cinderstag</defName>
-        <label>cinderstag leather</label>
-        <description>The reddish, blood-like hide of a cinderstag. Much like devilstrand, this material is highly heat resistant.</description>
+        <defName>FC_Leather_Infernihart</defName>
+        <label>infernihart leather</label>
+        <description>The reddish, blood-like hide of a infernihart. Much like devilstrand, this material is highly heat-resistant.</description>
         <burnableByRecipe>true</burnableByRecipe>
         <healthAffectsPrice>true</healthAffectsPrice>
         <minRewardCount>35</minRewardCount>

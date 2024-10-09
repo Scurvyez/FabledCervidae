@@ -63,11 +63,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Debugging\FCLog.cs" />
-    <Compile Include="Defs\LifestageAgeDefOf.cs" />
+    <Compile Include="Defs\FCDefOf.cs" />
+    <Compile Include="Defs\ModExtension_GameConditionStatOffsets.cs" />
+    <Compile Include="FabledCervidaeMain.cs" />
     <Compile Include="Harmony\Patches.cs" />
     <Compile Include="PawnRendering\PawnRenderNode_Animal_MaleAntlers.cs" />
     <Compile Include="PawnRendering\PawnRenderNode_Animal_SexualDimorphism.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StatParts\GameConditionStatOffsetPair.cs" />
+    <Compile Include="StatParts\StatPart_GameCondition.cs" />
     <Compile Include="ThingComps\Comp_DiseaseImmunity.cs" />
     <Compile Include="ThingComps\Comp_MaleAntlers.cs" />
     <Compile Include="ThingComps\Comp_SexualDimorphism.cs" />

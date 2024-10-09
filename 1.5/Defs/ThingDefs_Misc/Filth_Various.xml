@@ -22,8 +22,8 @@
     </ThingDef>
 
     <ThingDef ParentName="BaseFilth">
-        <defName>FC_Filth_GleamingCervusBlood</defName>
-        <label>gleaming cervus blood</label>
+        <defName>FC_Filth_AuravineBlood</defName>
+        <label>auravine blood</label>
         <statBases>
             <Beauty>-30</Beauty>
             <Cleanliness>-10</Cleanliness>
@@ -42,8 +42,8 @@
     </ThingDef>
 
     <ThingDef ParentName="BaseFilth">
-        <defName>FC_Filth_CinderstagBlood</defName>
-        <label>cinderstag blood</label>
+        <defName>FC_Filth_InfernihartBlood</defName>
+        <label>infernihart blood</label>
         <statBases>
             <Beauty>-30</Beauty>
             <Cleanliness>-10</Cleanliness>

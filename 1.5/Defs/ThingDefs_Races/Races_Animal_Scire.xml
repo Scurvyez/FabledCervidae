@@ -143,17 +143,27 @@
             <li Class="FabledCervidae.CompProperties_SexualDimorphism">
                 <maleRRangeOne>0 ~ 0</maleRRangeOne>
                 <maleGRangeOne>0.35 ~ 0.5</maleGRangeOne>
-                <maleBRangeOne>0.8 ~ 1</maleBRangeOne>
+                <maleBRangeOne>0.6 ~ 1</maleBRangeOne>
 
                 <femaleRRangeOne>0 ~ 0</femaleRRangeOne>
-                <femaleGRangeOne>0.6 ~ 0.9</femaleGRangeOne>
-                <femaleBRangeOne>1 ~ 1</femaleBRangeOne>
+                <femaleGRangeOne>0.35 ~ 0.6</femaleGRangeOne>
+                <femaleBRangeOne>0.5 ~ 0.9</femaleBRangeOne>
             </li>
             <li Class="FabledCervidae.CompProperties_MaleAntlers">
                 <adultAntlerVariantCount>3</adultAntlerVariantCount>
                 <juvenileAntlerVariantCount>1</juvenileAntlerVariantCount>
             </li>
         </comps>
+        <modExtensions>
+            <li Class="FabledCervidae.ModExtension_GameConditionStatOffsets">
+                <pairs>
+                    <li>
+                        <moveSpeedFactor>1.75</moveSpeedFactor>
+                        <gameCondition>ColdSnap</gameCondition>
+                    </li>
+                </pairs>
+            </li>
+        </modExtensions>
     </ThingDef>
 
     <PawnKindDef ParentName="AnimalKindBase">
@@ -190,7 +200,7 @@
                     <shaderType>CutoutComplex</shaderType>
                     <drawOffsetNorth>(0, 0, 0.3)</drawOffsetNorth>
                     <drawOffsetEast>(0, 0, 0.2)</drawOffsetEast>
-                    <drawOffsetSouth>(0, 0, 0.25)</drawOffsetSouth>
+                    <drawOffsetSouth>(0, 0, 0.2)</drawOffsetSouth>
                     <drawOffsetWest>(0, 0, 0.2)</drawOffsetWest>
                     <shadowData>
                         <volume>(0.5, 0.5, 0.5)</volume>
@@ -247,9 +257,9 @@
                     <texPath>FabledCervidae/Things/Pawn/Animal/Scire/ScireMale</texPath>
                     <drawSize>3.5</drawSize>
                     <shaderType>CutoutComplex</shaderType>
-                    <drawOffsetNorth>(0, 0, 0.5)</drawOffsetNorth>
+                    <drawOffsetNorth>(0, 0, 0.4)</drawOffsetNorth>
                     <drawOffsetEast>(0, 0, 0.8)</drawOffsetEast>
-                    <drawOffsetSouth>(0, 0, 0.45)</drawOffsetSouth>
+                    <drawOffsetSouth>(0, 0, 0.4)</drawOffsetSouth>
                     <drawOffsetWest>(0, 0, 0.8)</drawOffsetWest>
                     <shadowData>
                         <volume>(0.7, 0.7, 0.7)</volume>
@@ -260,10 +270,10 @@
                     <texPath>FabledCervidae/Things/Pawn/Animal/Scire/ScireFemale</texPath>
                     <drawSize>2.5</drawSize>
                     <shaderType>CutoutComplex</shaderType>
-                    <drawOffsetNorth>(0, 0, 0.5)</drawOffsetNorth>
-                    <drawOffsetEast>(0, 0, 0.8)</drawOffsetEast>
-                    <drawOffsetSouth>(0, 0, 0.45)</drawOffsetSouth>
-                    <drawOffsetWest>(0, 0, 0.8)</drawOffsetWest>
+                    <drawOffsetNorth>(0, 0, 0.3)</drawOffsetNorth>
+                    <drawOffsetEast>(0, 0, 0.4)</drawOffsetEast>
+                    <drawOffsetSouth>(0, 0, 0.3)</drawOffsetSouth>
+                    <drawOffsetWest>(0, 0, 0.4)</drawOffsetWest>
                     <shadowData>
                         <volume>(0.5, 0.5, 0.5)</volume>
                         <offset>(0,-2,0)</offset>
