@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/ThinkTreeDef[defName="Animal"]/thinkRoot/subNodes/li[@Class="ThinkNode_ChancePerHour_Constant"]/subNodes</xpath>
+        <value>
+            <li Class="FabledCervidae.JobGiver_FightOtherCervid"/>
+        </value>
+    </Operation>
+
+</Patch>

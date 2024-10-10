@@ -163,6 +163,10 @@
                     </li>
                 </pairs>
             </li>
+            <li Class="FabledCervidae.ModExtension_Territorial">
+                <targetAcquireRadius>20</targetAcquireRadius>
+                <disputeDuration>600</disputeDuration>
+            </li>
         </modExtensions>
     </ThingDef>
 

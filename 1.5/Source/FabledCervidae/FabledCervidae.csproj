@@ -65,8 +65,11 @@
     <Compile Include="Debugging\FCLog.cs" />
     <Compile Include="Defs\FCDefOf.cs" />
     <Compile Include="Defs\ModExtension_GameConditionStatOffsets.cs" />
+    <Compile Include="Defs\ModExtension_Territorial.cs" />
     <Compile Include="FabledCervidaeMain.cs" />
     <Compile Include="Harmony\Patches.cs" />
+    <Compile Include="Jobs\JobDriver_AttackTerritorial.cs" />
+    <Compile Include="Jobs\JobGiver_FightOtherCervid.cs" />
     <Compile Include="PawnRendering\PawnRenderNode_Animal_MaleAntlers.cs" />
     <Compile Include="PawnRendering\PawnRenderNode_Animal_SexualDimorphism.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
