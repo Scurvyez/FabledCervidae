@@ -58,18 +58,11 @@
         </tools>
         <race>
             <wildBiomes>
-                <IceSheet>0.3</IceSheet>
-                <SeaIce>0.3</SeaIce>
-                <ColdBog>0.00</ColdBog>
-                <Desert>0.00</Desert>
-                <BorealForest>0.4</BorealForest>
-                <Tundra>0.4</Tundra>
-                <TemperateForest>0.2</TemperateForest>
-                <TemperateSwamp>0.00</TemperateSwamp>
-                <TropicalRainforest>0.00</TropicalRainforest>
-                <TropicalSwamp>0.00</TropicalSwamp>
-                <AridShrubland>0.00</AridShrubland>
-                <ExtremeDesert>0.00</ExtremeDesert>
+                <IceSheet>0.2</IceSheet>
+                <SeaIce>0.1</SeaIce>
+                <BorealForest>0.5</BorealForest>
+                <Tundra>0.5</Tundra>
+                <TemperateForest>0.3</TemperateForest>
             </wildBiomes>
             <renderTree>FC_Animal_FabledCervidae</renderTree>
             <bloodDef>FC_Filth_ScireBlood</bloodDef>
@@ -163,9 +156,10 @@
                     </li>
                 </pairs>
             </li>
-            <li Class="FabledCervidae.ModExtension_Territorial">
+            <li Class="FabledCervidae.ModExtension_TerritorialFighting">
                 <targetAcquireRadius>20</targetAcquireRadius>
                 <disputeDuration>600</disputeDuration>
+                <fightChance>0.15</fightChance>
             </li>
         </modExtensions>
     </ThingDef>
@@ -181,7 +175,7 @@
         <ecoSystemWeight>0.25</ecoSystemWeight>
         <wildGroupSize>
             <min>1</min>
-            <max>6</max>
+            <max>7</max>
         </wildGroupSize>
         <lifeStages>
             <li>

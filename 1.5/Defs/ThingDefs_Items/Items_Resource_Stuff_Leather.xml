@@ -89,12 +89,44 @@
             <Mass>0.035</Mass>
         </statBases>
         <stuffProps>
-            <color>(124,98,163)</color>
+            <color>(255, 103, 0)</color>
             <commonality>0.075</commonality>
             <statFactors>
                 <Flammability>0.6</Flammability>
                 <MaxHitPoints>1.5</MaxHitPoints>
                 <Beauty>2.9</Beauty>
+            </statFactors>
+            <categories>
+                <li>Leathery</li>
+            </categories>
+        </stuffProps>
+    </ThingDef>
+
+    <ThingDef ParentName="LeatherBase">
+        <defName>FC_Leather_Mirelung</defName>
+        <label>mirelung leather</label>
+        <description>The hide of a mirelurk. Though diverse in outward appearance and color, the leather of a mirelurk is dark brown after the drying process.</description>
+        <burnableByRecipe>true</burnableByRecipe>
+        <healthAffectsPrice>true</healthAffectsPrice>
+        <minRewardCount>35</minRewardCount>
+        <graphicData>
+            <color>(102, 51, 0)</color>
+        </graphicData>
+        <statBases>
+            <MarketValue>5.85</MarketValue>
+            <StuffPower_Armor_Sharp>0.9</StuffPower_Armor_Sharp>
+            <StuffPower_Armor_Blunt>3.9</StuffPower_Armor_Blunt>
+            <StuffPower_Insulation_Cold>22</StuffPower_Insulation_Cold>
+            <StuffPower_Insulation_Heat>36</StuffPower_Insulation_Heat>
+            <DeteriorationRate>0.75</DeteriorationRate>
+            <MaxHitPoints>95</MaxHitPoints>
+            <Mass>0.07</Mass>
+        </statBases>
+        <stuffProps>
+            <color>(102, 51, 0)</color>
+            <commonality>0.075</commonality>
+            <statFactors>
+                <Beauty>1.5</Beauty>
             </statFactors>
             <categories>
                 <li>Leathery</li>

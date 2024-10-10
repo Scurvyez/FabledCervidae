@@ -4,6 +4,6 @@
     <FC_OwnImmunitiesLabel>Own Immunities</FC_OwnImmunitiesLabel>
     <FC_MasterImmunitiesLabel>Master's Immunities</FC_MasterImmunitiesLabel>
     <FC_OwnImmunitiesDesc>Whether through some unknown biological evolutionary detour or through divine creation, this animal has developed natural immunities to the following ailments.</FC_OwnImmunitiesDesc>
-    <FC_MasterImmunitiesDesc>Through even more mysterious ways this animal's powers are able to permeate its master's physical being and act as a protective barrier.</FC_MasterImmunitiesDesc>
+    <FC_MasterImmunitiesDesc>Through even more mysterious ways this animal's powers are able to permeate its master's physical being and act as a protective barrier.\n\nIf this animal is bonded to a colonist that colonist will benefit from immunities to the afflictions listed below.</FC_MasterImmunitiesDesc>
 
 </LanguageData>

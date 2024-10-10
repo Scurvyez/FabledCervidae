@@ -8,7 +8,8 @@ namespace FabledCervidae
 {
     public class JobDriver_AttackTerritorial : JobDriver
     {
-        private ModExtension_Territorial _modExt;
+        private ModExtension_TerritorialFighting _modExt;
+        private AnimationDef _fightingAnimation;
         
         public override bool TryMakePreToilReservations(bool errorOnFailed)
         {
@@ -18,51 +19,55 @@ namespace FabledCervidae
         protected override IEnumerable<Toil> MakeNewToils()
         {
             this.FailOnDespawnedOrNull(TargetIndex.A);
-            
-            _modExt = pawn.def.GetModExtension<ModExtension_Territorial>();
-            AnimationDef animationDef = FCDefOf.FC_FightingCervidsAnimation;
 
+            _modExt = pawn.def.GetModExtension<ModExtension_TerritorialFighting>();
+            _fightingAnimation = FCDefOf.FC_FightingCervidsAnimation;
+            
+            yield return MoveToTargetToil();
+            yield return AttackToil();
+            yield return PostCombatToil();
+        }
+
+        private Toil MoveToTargetToil()
+        {
             Toil moveToTargetToil = Toils_Goto.GotoThing(TargetIndex.A, PathEndMode.Touch);
             moveToTargetToil.FailOnDespawnedOrNull(TargetIndex.A);
-            yield return moveToTargetToil;
+            return moveToTargetToil;
+        }
 
-            Toil attackToil = Toils_Combat.FollowAndMeleeAttack(TargetIndex.A, TargetIndex.None, AttackAction);
+        private Toil AttackToil()
+        {
+            Toil attackToil = Toils_Combat.FollowAndMeleeAttack(TargetIndex.A, TargetIndex.None, PerformAttack);
             attackToil.defaultDuration = _modExt.disputeDuration;
             Action originalTickAction = attackToil.tickAction;
             
-            attackToil.tickAction = delegate
+            attackToil.tickAction = () =>
             {
                 originalTickAction?.Invoke();
-
-                if (pawn.Drawer.renderer.CurAnimation != animationDef)
-                {
-                    pawn.Drawer.renderer.SetAnimation(animationDef);
-                }
-                if (TargetA.Thing is Pawn targetPawn && targetPawn.Drawer.renderer.CurAnimation != animationDef)
-                {
-                    targetPawn.Drawer.renderer.SetAnimation(animationDef);
-                }
+                SetCombatAnimation(pawn, TargetA.Thing);
                 
-                if (attackToil.actor.jobs.curDriver.ticksLeftThisToil > 0) return;
-                pawn.jobs.curDriver.ReadyForNextToil();
+                if (attackToil.actor.jobs.curDriver.ticksLeftThisToil <= 0)
+                {
+                    pawn.jobs.curDriver.ReadyForNextToil();
+                }
             };
-            yield return attackToil;
-
-            yield return Toils_General.Do(delegate
+            return attackToil;
+        }
+        
+        private Toil PostCombatToil()
+        {
+            return Toils_General.Do(() =>
             {
                 if (TargetA.Thing is Pawn targetPawn)
                 {
-                    ClearCombatStance(targetPawn);
-                    ChillTheFuckOut(targetPawn);
+                    ResolvePostCombat(targetPawn);
                 }
-                
-                ClearCombatStance(pawn);
-                ChillTheFuckOut(pawn);
+                ResolvePostCombat(pawn);
                 EndJobWith(JobCondition.Succeeded);
             });
         }
-        
-        private void AttackAction()
+
+        private void PerformAttack()
         {
             Thing target = job.GetTarget(TargetIndex.A).Thing;
             if (target != null)
@@ -71,24 +76,43 @@ namespace FabledCervidae
             }
         }
 
-        public override bool IsContinuation(Job j)
+        private void SetCombatAnimation(Pawn attacker, Thing target)
         {
-            return job.GetTarget(TargetIndex.A) == j.GetTarget(TargetIndex.A);
+            if (attacker.Drawer.renderer.CurAnimation != _fightingAnimation)
+            {
+                attacker.Drawer.renderer.SetAnimation(_fightingAnimation);
+            }
+            if (target is Pawn targetPawn && targetPawn.Drawer.renderer.CurAnimation != _fightingAnimation)
+            {
+                targetPawn.Drawer.renderer.SetAnimation(_fightingAnimation);
+            }
         }
-        
+
+        private void ResolvePostCombat(Pawn animal)
+        {
+            ClearCombatStance(animal);
+            SetRelaxedState(animal);
+        }
+
         private static void ClearCombatStance(Pawn animal)
         {
             if (animal?.mindState?.meleeThreat == null) return;
             animal.mindState.meleeThreat = null;
             animal.jobs.StopAll();
         }
-        
-        private static void ChillTheFuckOut(Pawn animal)
+
+        private static void SetRelaxedState(Pawn animal)
         {
+            animal?.Drawer?.renderer?.SetAnimation(null);
+            
             if (animal?.jobs == null) return;
-            animal.Drawer.renderer.SetAnimation(null);
             Job walkAwayJob = JobMaker.MakeJob(JobDefOf.GotoWander);
             animal.jobs.StartJob(walkAwayJob, JobCondition.Succeeded, null, resumeCurJobAfterwards: false);
+        }
+
+        public override bool IsContinuation(Job j)
+        {
+            return job.GetTarget(TargetIndex.A) == j.GetTarget(TargetIndex.A);
         }
     }
 }

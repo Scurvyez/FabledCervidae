@@ -65,7 +65,7 @@
     <Compile Include="Debugging\FCLog.cs" />
     <Compile Include="Defs\FCDefOf.cs" />
     <Compile Include="Defs\ModExtension_GameConditionStatOffsets.cs" />
-    <Compile Include="Defs\ModExtension_Territorial.cs" />
+    <Compile Include="Defs\ModExtension_TerritorialFighting.cs" />
     <Compile Include="FabledCervidaeMain.cs" />
     <Compile Include="Harmony\Patches.cs" />
     <Compile Include="Jobs\JobDriver_AttackTerritorial.cs" />

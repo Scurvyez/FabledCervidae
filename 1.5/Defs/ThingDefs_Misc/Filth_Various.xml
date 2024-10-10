@@ -61,4 +61,24 @@
         </filth>
     </ThingDef>
 
+    <ThingDef ParentName="BaseFilth">
+        <defName>FC_Filth_MirelungBlood</defName>
+        <label>mirelung blood</label>
+        <statBases>
+            <Beauty>-30</Beauty>
+            <Cleanliness>-10</Cleanliness>
+        </statBases>
+        <graphicData>
+            <texPath>Things/Filth/Spatter</texPath>
+            <color>(102, 51, 0)</color>
+        </graphicData>
+        <filth>
+            <disappearsInDays>5~10</disappearsInDays>
+            <rainWashes>true</rainWashes>
+            <cleaningWorkToReduceThickness>70</cleaningWorkToReduceThickness>
+            <canFilthAttach>true</canFilthAttach>
+            <cleaningSound>Interact_CleanFilth_Fluid</cleaningSound>
+        </filth>
+    </ThingDef>
+
 </Defs>
