@@ -62,6 +62,13 @@
                 <TemperateForest>0.1</TemperateForest>
                 <AridShrubland>0.4</AridShrubland>
                 <ExtremeDesert>0.7</ExtremeDesert>
+                <AB_PyroclasticConflagration MayRequire="sarg.alphabiomes">0.3</AB_PyroclasticConflagration>
+                <AB_RockyCrags MayRequire="sarg.alphabiomes">0.2</AB_RockyCrags>
+                <AB_TarPits MayRequire="sarg.alphabiomes">0.4</AB_TarPits>
+                <ZBiome_CoastalDunes MayRequire="zylle.morevanillabiomes">0.1</ZBiome_CoastalDunes>
+                <ZBiome_Badlands MayRequire="zylle.morevanillabiomes">0.1</ZBiome_Badlands>
+                <ZBiome_DesertOasis MayRequire="zylle.morevanillabiomes">0.2</ZBiome_DesertOasis>
+                <ZBiome_Sandbar_NoBeach MayRequire="zylle.morevanillabiomes">0.1</ZBiome_Sandbar_NoBeach>
             </wildBiomes>
             <renderTree>FC_Animal_FabledCervidae</renderTree>
             <bloodDef>FC_Filth_InfernihartBlood</bloodDef>
@@ -142,6 +149,15 @@
             <li Class="FabledCervidae.CompProperties_MaleAntlers">
                 <adultAntlerVariantCount>1</adultAntlerVariantCount>
                 <juvenileAntlerVariantCount>1</juvenileAntlerVariantCount>
+            </li>
+            <li Class="FabledCervidae.CompProperties_GlowingEyes">
+                <eyeGraphicMale>FabledCervidae/Things/Pawn/Animal/Infernihart/InfernihartMaleGlowingEyesAdult</eyeGraphicMale>
+                <eyeGraphicFemale>FabledCervidae/Things/Pawn/Animal/Infernihart/InfernihartFemaleGlowingEyesAdult</eyeGraphicFemale>
+                <eyeColor>(1, 0.5, 0.2)</eyeColor>
+                <shouldFadeInOut>true</shouldFadeInOut>
+                <drawWhileSleeping>false</drawWhileSleeping>
+                <drawAtNight>true</drawAtNight>
+                <sunlightThreshold>0.3</sunlightThreshold>
             </li>
         </comps>
         <modExtensions>

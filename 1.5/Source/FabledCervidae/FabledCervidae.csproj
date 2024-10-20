@@ -76,9 +76,11 @@
     <Compile Include="StatParts\GameConditionStatOffsetPair.cs" />
     <Compile Include="StatParts\StatPart_GameCondition.cs" />
     <Compile Include="ThingComps\Comp_DiseaseImmunity.cs" />
+    <Compile Include="ThingComps\Comp_GlowingEyes.cs" />
     <Compile Include="ThingComps\Comp_MaleAntlers.cs" />
     <Compile Include="ThingComps\Comp_SexualDimorphism.cs" />
     <Compile Include="ThingComps\ThingCompProperties\CompProperties_DiseaseImmunity.cs" />
+    <Compile Include="ThingComps\ThingCompProperties\CompProperties_GlowingEyes.cs" />
     <Compile Include="ThingComps\ThingCompProperties\CompProperties_MaleAntlers.cs" />
     <Compile Include="ThingComps\ThingCompProperties\CompProperties_SexualDimorphism.cs" />
   </ItemGroup>

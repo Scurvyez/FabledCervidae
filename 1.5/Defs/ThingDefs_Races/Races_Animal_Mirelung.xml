@@ -61,6 +61,9 @@
                 <BorealForest>0.1</BorealForest>
                 <TemperateSwamp>0.6</TemperateSwamp>
                 <TemperateForest>0.3</TemperateForest>
+                <AB_FeraliskInfestedJungle MayRequire="sarg.alphabiomes">0.3</AB_FeraliskInfestedJungle>
+                <AB_MiasmicMangrove MayRequire="sarg.alphabiomes">0.4</AB_MiasmicMangrove>
+                <ZBiome_Marsh MayRequire="zylle.morevanillabiomes">0.5</ZBiome_Marsh>
             </wildBiomes>
             <renderTree>FC_Animal_FabledCervidae</renderTree>
             <bloodDef>FC_Filth_MirelungBlood</bloodDef>

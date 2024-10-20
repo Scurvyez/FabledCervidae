@@ -63,6 +63,11 @@
                 <BorealForest>0.6</BorealForest>
                 <Tundra>0.5</Tundra>
                 <TemperateForest>0.4</TemperateForest>
+                <AB_IdyllicMeadows MayRequire="sarg.alphabiomes">0.4</AB_IdyllicMeadows>
+                <AB_OcularForest MayRequire="sarg.alphabiomes">0.2</AB_OcularForest>
+                <ZBiome_AlpineMeadow MayRequire="zylle.morevanillabiomes">0.2</ZBiome_AlpineMeadow>
+                <ZBiome_CloudForest MayRequire="zylle.morevanillabiomes">0.2</ZBiome_CloudForest>
+                <ZBiome_GlacialShield MayRequire="zylle.morevanillabiomes">0.1</ZBiome_GlacialShield>
             </wildBiomes>
             <renderTree>FC_Animal_FabledCervidae</renderTree>
             <bloodDef>FC_Filth_AuravineBlood</bloodDef>

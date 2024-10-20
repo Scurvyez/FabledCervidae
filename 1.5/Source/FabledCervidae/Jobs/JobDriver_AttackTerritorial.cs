@@ -28,7 +28,7 @@ namespace FabledCervidae
             yield return PostCombatToil();
         }
 
-        private Toil MoveToTargetToil()
+        private static Toil MoveToTargetToil()
         {
             Toil moveToTargetToil = Toils_Goto.GotoThing(TargetIndex.A, PathEndMode.Touch);
             moveToTargetToil.FailOnDespawnedOrNull(TargetIndex.A);
@@ -88,7 +88,7 @@ namespace FabledCervidae
             }
         }
 
-        private void ResolvePostCombat(Pawn animal)
+        private static void ResolvePostCombat(Pawn animal)
         {
             ClearCombatStance(animal);
             SetRelaxedState(animal);
