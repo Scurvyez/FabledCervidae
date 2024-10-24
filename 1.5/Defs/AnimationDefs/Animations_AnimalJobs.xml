@@ -6,7 +6,7 @@
         <durationTicks>120</durationTicks>
         <startOnRandomTick>false</startOnRandomTick>
         <playWhenDowned>false</playWhenDowned>
-        <scale>0.35</scale>
+        <scale>0.65</scale>
         <animationParts>
             <li>
                 <key>Root</key>

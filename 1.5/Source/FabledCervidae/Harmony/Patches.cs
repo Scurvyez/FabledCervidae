@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Reflection.Emit;
 using System.Text;
 using HarmonyLib;
 using LudeonTK;
@@ -43,6 +44,9 @@ namespace FabledCervidae
             
             harmony.Patch(original: AccessTools.Method(typeof(ThingDef), "SpecialDisplayStats"),
                 postfix: new HarmonyMethod(typeof(Patches), nameof(SpecialDisplayStats_Postfix)));
+            
+            harmony.Patch(original: AccessTools.Method(typeof(WildAnimalSpawner), "CommonalityOfAnimalNow"),
+                prefix: new HarmonyMethod(typeof(Patches), nameof(WildAnimalSpawnerCommonalityOfAnimalNow_Prefix)));
         }
         
         private static void ParallelGetPreRenderResults_Prefix(PawnRenderer __instance, ref Vector3 drawLoc, Pawn ___pawn)
@@ -134,6 +138,17 @@ namespace FabledCervidae
                     1
                 ));
             }
+        }
+        
+        public static bool WildAnimalSpawnerCommonalityOfAnimalNow_Prefix(PawnKindDef def, ref float __result)
+        {
+            if (FCMod._settings.animalToggle != null && FCMod._settings.animalToggle.ContainsKey(def.defName))
+            {
+                if (!FCMod._settings.animalToggle[def.defName]) return true;
+                __result = 0f;
+                return false;
+            }
+            return true;
         }
     }
 }

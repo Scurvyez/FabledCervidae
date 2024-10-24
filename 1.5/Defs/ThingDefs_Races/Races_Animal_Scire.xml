@@ -62,11 +62,14 @@
                 <SeaIce>0.1</SeaIce>
                 <BorealForest>0.5</BorealForest>
                 <Tundra>0.5</Tundra>
-                <TemperateForest>0.3</TemperateForest>
+                <TemperateForest>50</TemperateForest>
                 <AB_GallatrossGraveyard MayRequire="sarg.alphabiomes">0.5</AB_GallatrossGraveyard>
                 <AB_PropaneLakes MayRequire="sarg.alphabiomes">0.25</AB_PropaneLakes>
                 <ZBiome_AlpineMeadow MayRequire="zylle.morevanillabiomes">0.2</ZBiome_AlpineMeadow>
                 <ZBiome_GlacialShield MayRequire="zylle.morevanillabiomes">0.5</ZBiome_GlacialShield>
+                <RG_TemperateGrassland MayRequire="regrowth.botr.core">0.2</RG_TemperateGrassland>
+                <DankPyon_AncientForest MayRequire="dankpyon.medieval.overhaul">0.4</DankPyon_AncientForest>
+                <DankPyon_DarkForest MayRequire="dankpyon.medieval.overhaul">0.2</DankPyon_DarkForest>
             </wildBiomes>
             <renderTree>FC_Animal_FabledCervidae</renderTree>
             <bloodDef>FC_Filth_ScireBlood</bloodDef>

@@ -69,6 +69,7 @@
                 <ZBiome_Badlands MayRequire="zylle.morevanillabiomes">0.1</ZBiome_Badlands>
                 <ZBiome_DesertOasis MayRequire="zylle.morevanillabiomes">0.2</ZBiome_DesertOasis>
                 <ZBiome_Sandbar_NoBeach MayRequire="zylle.morevanillabiomes">0.1</ZBiome_Sandbar_NoBeach>
+                <RG_BoilingForest MayRequire="regrowth.botr.boilingforest">0.5</RG_BoilingForest>
             </wildBiomes>
             <renderTree>FC_Animal_FabledCervidae</renderTree>
             <bloodDef>FC_Filth_InfernihartBlood</bloodDef>

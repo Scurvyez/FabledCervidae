@@ -6,12 +6,13 @@ namespace FabledCervidae
 {
     public class Comp_GlowingEyes : ThingComp
     {
-        private bool shouldDrawEyes;
-        private Graphic eyeGraphic;
-        private Vector2 drawSize;
-        private float fadeProgress;
+        private bool _shouldDrawEyes;
+        private float _fadeProgress;
+        private Graphic _eyeGraphic;
+        private Vector2 _drawSize;
+        private readonly MaterialPropertyBlock _mpb = new();
+        
         private const float fadeSpeed = 0.01f;
-        private readonly MaterialPropertyBlock Mpb = new();
         
         public CompProperties_GlowingEyes Props => (CompProperties_GlowingEyes)props;
 
@@ -23,22 +24,20 @@ namespace FabledCervidae
 
             if (Props.shouldFadeInOut)
             {
-                if (shouldDraw && parentPawn.pather.MovingNow)
+                _fadeProgress = shouldDraw switch
                 {
-                    fadeProgress = Mathf.Clamp(fadeProgress + fadeSpeed, 0f, 1f);
-                }
-                else if (!shouldDraw)
-                {
-                    fadeProgress = 0f;
-                }
+                    true when parentPawn.pather.MovingNow => Mathf.Clamp(_fadeProgress + fadeSpeed, 0f, 1f),
+                    false => 0f,
+                    _ => _fadeProgress
+                };
             }
             else
             {
-                fadeProgress = shouldDraw ? 1f : 0f;
+                _fadeProgress = shouldDraw ? 1f : 0f;
             }
 
-            shouldDrawEyes = shouldDraw || fadeProgress > 0f;
-            if (shouldDrawEyes)
+            _shouldDrawEyes = shouldDraw || _fadeProgress > 0f;
+            if (_shouldDrawEyes)
             {
                 CacheEyeGraphic(parentPawn);
             }
@@ -47,12 +46,9 @@ namespace FabledCervidae
         private bool ShouldDrawEyes(Pawn pawn)
         {
             if (!pawn.Awake() && !Props.drawWhileSleeping && pawn.GetPosture() != PawnPosture.Standing) return false;
-            if (Props.drawAtNight)
-            {
-                float currentSunGlow = GenCelestial.CurCelestialSunGlow(pawn.Map);
-                if (currentSunGlow > Props.sunlightThreshold) return false;
-            }
-            return true;
+            if (!Props.drawAtNight) return true;
+            float currentSunGlow = GenCelestial.CurCelestialSunGlow(pawn.Map);
+            return !(currentSunGlow > Props.sunlightThreshold);
         }
 
         private void CacheEyeGraphic(Pawn pawn)
@@ -63,30 +59,30 @@ namespace FabledCervidae
             switch (pawn.gender)
             {
                 case Gender.Female:
-                    drawSize = pawnKind.lifeStages[pawn.ageTracker.CurLifeStageIndex].femaleGraphicData.Graphic.drawSize;
+                    _drawSize = pawnKind.lifeStages[pawn.ageTracker.CurLifeStageIndex].femaleGraphicData.Graphic.drawSize;
                     eyeGraphicPath = Props.eyeGraphicFemale;
                     break;
                 case Gender.Male:
-                    drawSize = pawnKind.lifeStages[pawn.ageTracker.CurLifeStageIndex].bodyGraphicData.Graphic.drawSize;
+                    _drawSize = pawnKind.lifeStages[pawn.ageTracker.CurLifeStageIndex].bodyGraphicData.Graphic.drawSize;
                     eyeGraphicPath = Props.eyeGraphicMale;
                     break;
                 case Gender.None:
                     return;
             }
 
-            eyeGraphic = GraphicDatabase.Get<Graphic_Multi>(
+            _eyeGraphic = GraphicDatabase.Get<Graphic_Multi>(
                 eyeGraphicPath,
                 ShaderDatabase.TransparentPostLight,
-                new Vector2(drawSize.x, drawSize.y),
+                new Vector2(_drawSize.x, _drawSize.y),
                 Props.eyeColor);
         }
 
         public override void PostDraw()
         {
             base.PostDraw();
-            if (shouldDrawEyes && eyeGraphic != null && parent is Pawn parentPawn)
+            if (_shouldDrawEyes && _eyeGraphic != null && parent is Pawn parentPawn)
             {
-                DrawGlowingEyeGraphic(parentPawn, eyeGraphic, parentPawn.Rotation, drawSize, fadeProgress);
+                DrawGlowingEyeGraphic(parentPawn, _eyeGraphic, parentPawn.Rotation, _drawSize, _fadeProgress);
             }
         }
 
@@ -109,15 +105,21 @@ namespace FabledCervidae
             };
 
             Vector3 drawPos = pawn.Drawer.DrawPos + offset;
-            float yOffset = 0.01f;
-            drawPos += new Vector3(0f, yOffset, 0f);
+            drawPos.y += 0.0075f;
 
             Material fadedMat = FadedMaterialPool.FadedVersionOf(eyeGraphic.MatAt(eyeRotation), eyeFadeProgress);
             Matrix4x4 matrix = Matrix4x4.TRS(drawPos, Quaternion.identity, new Vector3(eyeDrawSize.x, 1f, eyeDrawSize.y));
-            Mpb.Clear();
+            _mpb.Clear();
             
-            Mpb.SetColor(ShaderPropertyIDs.Color, new Color(Props.eyeColor.r, Props.eyeColor.g, Props.eyeColor.b, eyeFadeProgress));
-            Graphics.DrawMesh(MeshPool.plane10, matrix, fadedMat, 0, null, 0, Mpb);
+            _mpb.SetColor(ShaderPropertyIDs.Color, new Color(Props.eyeColor.r, Props.eyeColor.g, Props.eyeColor.b, eyeFadeProgress));
+            Graphics.DrawMesh(MeshPool.plane10, matrix, fadedMat, 0, null, 0, _mpb);
+        }
+
+        public override void PostExposeData()
+        {
+            base.PostExposeData();
+            Scribe_Values.Look(ref _fadeProgress, "_fadeProgress", 0f);
+            Scribe_Values.Look(ref _shouldDrawEyes, "_shouldDrawEyes", false);
         }
     }
 }

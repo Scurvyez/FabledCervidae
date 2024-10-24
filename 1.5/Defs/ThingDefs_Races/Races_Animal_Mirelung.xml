@@ -64,6 +64,7 @@
                 <AB_FeraliskInfestedJungle MayRequire="sarg.alphabiomes">0.3</AB_FeraliskInfestedJungle>
                 <AB_MiasmicMangrove MayRequire="sarg.alphabiomes">0.4</AB_MiasmicMangrove>
                 <ZBiome_Marsh MayRequire="zylle.morevanillabiomes">0.5</ZBiome_Marsh>
+                <RG_AspenForest MayRequire="regrowth.botr.aspenforest">0.2</RG_AspenForest>
             </wildBiomes>
             <renderTree>FC_Animal_FabledCervidae</renderTree>
             <bloodDef>FC_Filth_MirelungBlood</bloodDef>
