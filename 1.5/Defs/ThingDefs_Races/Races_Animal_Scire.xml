@@ -128,19 +128,19 @@
             <soundMeleeMiss>Pawn_Melee_BigBash_Miss</soundMeleeMiss>
         </race>
         <comps>
-            <li Class="FabledCervidae.CompProperties_DiseaseImmunity">
+            <!-- <li Class="FabledCervidae.CompProperties_DiseaseImmunity">
                 <ownImmunities>
                     <li>Animal_Flu</li>
                     <li>Hypothermia</li>
                     <li>Frostbite</li>
                 </ownImmunities>
-                <!-- <masterImmunities>
+                <masterImmunities>
                     <li>Flu</li>
                     <li>Hypothermia</li>
                     <li>Frostbite</li>
-                </masterImmunities> -->
+                </masterImmunities>
                 <tickInterval>2500</tickInterval>
-            </li>
+            </li>  -->
             <li Class="FabledCervidae.CompProperties_SexualDimorphism">
                 <maleRRangeOne>0 ~ 0</maleRRangeOne>
                 <maleGRangeOne>0.35 ~ 0.5</maleGRangeOne>

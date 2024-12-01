@@ -3,19 +3,71 @@
 
     <GeneDef>
         <defName>FC_Immunities_Scire</defName>
-        <label>scire immunity transference</label>
+        <label>scire vitality transference</label>
         <description>Carriers of this gene gain an immense natural resistance to the flu, hypothermia, and frostbite via a strong metaphysical bond with a colony scire.</description>
         <iconPath>UI/Icons/Genes/Gene_StrongImmunity</iconPath>
         <displayOrderInCategory>11</displayOrderInCategory>
         <selectionWeight>0</selectionWeight>
         <biostatCpx>0</biostatCpx>
         <statFactors>
-            <ImmunityGainSpeed>10</ImmunityGainSpeed>
+            <ImmunityGainSpeed>20</ImmunityGainSpeed>
         </statFactors>
         <makeImmuneTo>
             <li>Flu</li>
             <li>Hypothermia</li>
             <li>Frostbite</li>
+        </makeImmuneTo>
+    </GeneDef>
+
+    <GeneDef>
+        <defName>FC_Immunities_Mirelung</defName>
+        <label>mirelung vitality transference</label>
+        <description>Carriers of this gene gain an immense natural resistance to fibrous mechanites and sensory mechanites via a strong metaphysical bond with a colony mirelung.</description>
+        <iconPath>UI/Icons/Genes/Gene_StrongImmunity</iconPath>
+        <displayOrderInCategory>11</displayOrderInCategory>
+        <selectionWeight>0</selectionWeight>
+        <biostatCpx>0</biostatCpx>
+        <statFactors>
+            <ImmunityGainSpeed>20</ImmunityGainSpeed>
+        </statFactors>
+        <makeImmuneTo>
+            <li>FibrousMechanites</li>
+            <li>SensoryMechanites</li>
+        </makeImmuneTo>
+    </GeneDef>
+
+    <GeneDef>
+        <defName>FC_Immunities_Infernihart</defName>
+        <label>infernihart vitality transference</label>
+        <description>Carriers of this gene gain an immense natural resistance to heat stroke and burn injuries via a strong metaphysical bond with a colony infernihart.</description>
+        <iconPath>UI/Icons/Genes/Gene_StrongImmunity</iconPath>
+        <displayOrderInCategory>11</displayOrderInCategory>
+        <selectionWeight>0</selectionWeight>
+        <biostatCpx>0</biostatCpx>
+        <statFactors>
+            <ImmunityGainSpeed>20</ImmunityGainSpeed>
+        </statFactors>
+        <makeImmuneTo>
+            <li>Heatstroke</li>
+            <li>Burn</li>
+        </makeImmuneTo>
+    </GeneDef>
+
+    <GeneDef>
+        <defName>FC_Immunities_Auravine</defName>
+        <label>auravine vitality transference</label>
+        <description>Carriers of this gene gain an immense natural resistance to the plague, flu, and malaria via a strong metaphysical bond with a colony auravine.</description>
+        <iconPath>UI/Icons/Genes/Gene_StrongImmunity</iconPath>
+        <displayOrderInCategory>11</displayOrderInCategory>
+        <selectionWeight>0</selectionWeight>
+        <biostatCpx>0</biostatCpx>
+        <statFactors>
+            <ImmunityGainSpeed>20</ImmunityGainSpeed>
+        </statFactors>
+        <makeImmuneTo>
+            <li>Plague</li>
+            <li>Flu</li>
+            <li>Malaria</li>
         </makeImmuneTo>
     </GeneDef>
 

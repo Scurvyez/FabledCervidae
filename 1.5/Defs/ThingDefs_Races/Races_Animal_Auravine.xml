@@ -129,7 +129,7 @@
             <soundMeleeMiss>Pawn_Melee_BigBash_Miss</soundMeleeMiss>
         </race>
         <comps>
-            <li Class="FabledCervidae.CompProperties_DiseaseImmunity">
+            <!-- <li Class="FabledCervidae.CompProperties_DiseaseImmunity">
                 <ownImmunities>
                     <li>Animal_Plague</li>
                     <li>Animal_Flu</li>
@@ -141,7 +141,7 @@
                     <li>Malaria</li>
                 </masterImmunities>
                 <tickInterval>2500</tickInterval>
-            </li>
+            </li> -->
             <li Class="FabledCervidae.CompProperties_SexualDimorphism">
                 <maleRRangeOne>0.6 ~ 1</maleRRangeOne>
                 <maleGRangeOne>0.35 ~ 0.5</maleGRangeOne>

@@ -123,7 +123,7 @@
             <soundMeleeMiss>Pawn_Melee_BigBash_Miss</soundMeleeMiss>
         </race>
         <comps>
-            <li Class="FabledCervidae.CompProperties_DiseaseImmunity">
+            <!-- <li Class="FabledCervidae.CompProperties_DiseaseImmunity">
                 <ownImmunities>
                     <li>Animal_Plague</li>
                     <li>GutWorms</li>
@@ -137,7 +137,7 @@
                     <li>SensoryMechanites</li>
                 </masterImmunities>
                 <tickInterval>2500</tickInterval>
-            </li>
+            </li> -->
             <li Class="FabledCervidae.CompProperties_SexualDimorphism">
                 <maleRRangeOne>0.25 ~ 0.5</maleRRangeOne>
                 <maleGRangeOne>0.1 ~ 0.2</maleGRangeOne>

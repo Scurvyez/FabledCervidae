@@ -66,9 +66,11 @@
     <Compile Include="Defs\FCDefOf.cs" />
     <Compile Include="Defs\ModExtension_ButcherDrops.cs" />
     <Compile Include="Defs\ModExtension_GameConditionStatOffsets.cs" />
+    <Compile Include="Defs\ModExtension_Resistances.cs" />
     <Compile Include="Defs\ModExtension_TerritorialFighting.cs" />
     <Compile Include="FabledCervidaeMain.cs" />
     <Compile Include="Harmony\Patches.cs" />
+    <Compile Include="Harmony\PatchesHelper.cs" />
     <Compile Include="Jobs\JobDriver_AttackTerritorial.cs" />
     <Compile Include="Jobs\JobGiver_FightOtherCervid.cs" />
     <Compile Include="PawnRendering\PawnRenderNode_Animal_MaleAntlers.cs" />
