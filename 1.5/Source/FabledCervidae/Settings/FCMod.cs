@@ -7,14 +7,14 @@ namespace FabledCervidae
 {
     public class FCMod : Mod
     {
-        public List<PawnKindDef> allFCAnimals = [];
-        public static FCSettings _settings;
+        public List<PawnKindDef> AllFCAnimals = [];
+        public static FCSettings Settings;
         
         private string _defNamePrefix = "FC_";
         
         public FCMod(ModContentPack content) : base(content)
         {
-            _settings = GetSettings<FCSettings>();
+            Settings = GetSettings<FCSettings>();
         }
         
         public override string SettingsCategory()
@@ -25,23 +25,23 @@ namespace FabledCervidae
         public override void DoSettingsWindowContents(Rect inRect)
         {
             base.DoSettingsWindowContents(inRect);
-            allFCAnimals = (from currentDef in DefDatabase<PawnKindDef>.AllDefs
+            AllFCAnimals = (from currentDef in DefDatabase<PawnKindDef>.AllDefs
                 where currentDef.defName.Contains(_defNamePrefix)
                 orderby currentDef.defName
                 select currentDef).ToList();
 
-            _settings.animalToggle ??= new Dictionary<string, bool>();
+            Settings.animalToggle ??= new Dictionary<string, bool>();
             
-            foreach (PawnKindDef pkd in allFCAnimals)
+            foreach (PawnKindDef pkd in AllFCAnimals)
             {
-                if (!_settings.animalToggle.ContainsKey(pkd.defName))
+                if (!Settings.animalToggle.ContainsKey(pkd.defName))
                 {
-                    _settings.animalToggle[pkd.defName] = false;
+                    Settings.animalToggle[pkd.defName] = false;
                 }
             }
             
-            _settings.DoWindowContents(inRect);
-            _settings.Write();
+            Settings.DoWindowContents(inRect);
+            Settings.Write();
         }
     }
 }

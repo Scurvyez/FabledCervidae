@@ -4,11 +4,11 @@
     <ThingDef ParentName="AnimalThingBase">
         <defName>FC_Auravine</defName>
         <label>auravine</label>
-        <description>Auravines are grand beasts often found in cooler and temperate climates. Their hides and hair resemble a beautiful aurora in the northern night skies.\n\nIt is unknown how but these magical creatures are able to cure certain afflictions in bonded pawns.</description>
+        <description>Auravines are grand beasts often found in cooler and temperate climates. Their hides and hair resemble a beautiful aurora in the northern night skies.\n\nIt is unknown how but these magical creatures are able to cure certain afflictions in bonded pawns.\n\nThey are just as fast on their hooves as terrestrial deer species.</description>
         <statBases>
             <MoveSpeed>5.5</MoveSpeed>
-            <ComfyTemperatureMin>-30</ComfyTemperatureMin>
-            <MarketValue>450</MarketValue>
+            <ComfyTemperatureMin>-35</ComfyTemperatureMin>
+            <MarketValue>350</MarketValue>
         </statBases>
         <tradeTags>
             <li>AnimalExotic</li>
@@ -42,16 +42,16 @@
                 <power>8</power>
                 <cooldownTime>2</cooldownTime>
                 <linkedBodyPartsGroup>Teeth</linkedBodyPartsGroup>
-                <chanceFactor>0.5</chanceFactor>
+                <chanceFactor>0.3</chanceFactor>
             </li>
             <li>
                 <label>antlers</label>
                 <capacities>
                     <li>Blunt</li>
                 </capacities>
-                <power>15</power>
-                <cooldownTime>4</cooldownTime>
-                <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+                <power>12</power>
+                <cooldownTime>6</cooldownTime>
+                <linkedBodyPartsGroup>FC_AntlerAttackTool</linkedBodyPartsGroup>
                 <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
                 <chanceFactor>0.5</chanceFactor>
             </li>
@@ -75,7 +75,7 @@
             <renderTree>FC_Animal_FabledCervidae</renderTree>
             <bloodDef>FC_Filth_AuravineBlood</bloodDef>
             <leatherDef>FC_Leather_Auravine</leatherDef>
-            <body>QuadrupedAnimalWithHooves</body>
+            <body>FC_QuadrupedAnimalWithHoovesAndAntlers</body>
             <foodType>VegetarianRoughAnimal</foodType>
             <meatLabel>cervus shank</meatLabel>
             <herdAnimal>true</herdAnimal>
@@ -83,15 +83,16 @@
             <trainability>Advanced</trainability>
             <nameOnTameChance>1</nameOnTameChance>
             <petness>0.2</petness>
-            <nuzzleMtbHours>16</nuzzleMtbHours>
+            <nuzzleMtbHours>15</nuzzleMtbHours>
             <maxPreyBodySize>1.0</maxPreyBodySize>
             <baseBodySize>1.0</baseBodySize>
             <baseHungerRate>0.19</baseHungerRate>
             <baseHealthScale>1.8</baseHealthScale>
-            <wildness>0.50</wildness>
+            <wildness>0.75</wildness>
+            <roamMtbDays>2</roamMtbDays>
             <manhunterOnTameFailChance>0.05</manhunterOnTameFailChance>
             <manhunterOnDamageChance>0.15</manhunterOnDamageChance>
-            <gestationPeriodDays>24</gestationPeriodDays>
+            <gestationPeriodDays>5.661</gestationPeriodDays>
             <lifeExpectancy>15</lifeExpectancy>
             <litterSizeCurve>
                 <points>
@@ -139,7 +140,7 @@
                     <li>Flu</li>
                     <li>Malaria</li>
                 </masterImmunities>
-                <tickInterval>250</tickInterval>
+                <tickInterval>2500</tickInterval>
             </li>
             <li Class="FabledCervidae.CompProperties_SexualDimorphism">
                 <maleRRangeOne>0.6 ~ 1</maleRRangeOne>
@@ -168,6 +169,11 @@
                 <targetAcquireRadius>20</targetAcquireRadius>
                 <disputeDuration>600</disputeDuration>
                 <fightChance>0.09</fightChance>
+            </li>
+            <li Class="FabledCervidae.ModExtension_ButcherDrops">
+                <adultAntler>FC_AuravineAntler</adultAntler>
+                <dropChance>0.5</dropChance>
+                <extraDropChance>0.2</extraDropChance>
             </li>
         </modExtensions>
     </ThingDef>

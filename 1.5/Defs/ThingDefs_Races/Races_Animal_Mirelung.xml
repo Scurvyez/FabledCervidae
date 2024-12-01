@@ -4,9 +4,9 @@
     <ThingDef ParentName="AnimalThingBase">
         <defName>FC_Mirelung</defName>
         <label>mirelung</label>
-        <description>This bog-dwelling creature loves the humidity of swampy environments. It's one with the swamps and will defend its home with devout passion.\n\nWhile not as aesthetically glorious as other cervid species, its leather can absorb a great deal of damage from blunt objects making it a sought-after animal for its hide.\n\nBecause of its strong symbiotic relationship with the ecosystem, it is immune to artificial irritants such as mechanites. This immunity can even be passed on to bonded pawns.</description>
+        <description>This bog-dwelling creature loves the humidity of swampy environments. It's one with the swamps and will defend its home with devout passion though it is slightly slower than terrestrial species.\n\nWhile not as aesthetically glorious as other cervid species, its leather can absorb a great deal of damage from blunt objects making it a sought-after animal for its hide.\n\nBecause of its strong symbiotic relationship with the ecosystem, it is immune to artificial irritants such as mechanites. This immunity can even be passed on to bonded pawns.</description>
         <statBases>
-            <MoveSpeed>5.5</MoveSpeed>
+            <MoveSpeed>5.25</MoveSpeed>
             <ComfyTemperatureMin>-15</ComfyTemperatureMin>
             <MarketValue>350</MarketValue>
         </statBases>
@@ -42,18 +42,18 @@
                 <power>8</power>
                 <cooldownTime>2</cooldownTime>
                 <linkedBodyPartsGroup>Teeth</linkedBodyPartsGroup>
-                <chanceFactor>0.5</chanceFactor>
+                <chanceFactor>0.3</chanceFactor>
             </li>
             <li>
                 <label>antlers</label>
                 <capacities>
                     <li>Blunt</li>
                 </capacities>
-                <power>15</power>
-                <cooldownTime>4</cooldownTime>
-                <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+                <power>10</power>
+                <cooldownTime>6</cooldownTime>
+                <linkedBodyPartsGroup>FC_AntlerAttackTool</linkedBodyPartsGroup>
                 <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
-                <chanceFactor>0.6</chanceFactor>
+                <chanceFactor>0.5</chanceFactor>
             </li>
         </tools>
         <race>
@@ -69,23 +69,24 @@
             <renderTree>FC_Animal_FabledCervidae</renderTree>
             <bloodDef>FC_Filth_MirelungBlood</bloodDef>
             <leatherDef>FC_Leather_Mirelung</leatherDef>
-            <body>QuadrupedAnimalWithHooves</body>
+            <body>FC_QuadrupedAnimalWithHoovesAndAntlers</body>
             <foodType>VegetarianRoughAnimal</foodType>
             <meatLabel>mirelung shank</meatLabel>
             <herdAnimal>true</herdAnimal>
             <trainability>Advanced</trainability>
             <nameOnTameChance>1</nameOnTameChance>
             <petness>0.2</petness>
-            <nuzzleMtbHours>13</nuzzleMtbHours>
+            <nuzzleMtbHours>15</nuzzleMtbHours>
             <predator>false</predator>
             <maxPreyBodySize>1.0</maxPreyBodySize>
             <baseBodySize>1.0</baseBodySize>
             <baseHungerRate>0.19</baseHungerRate>
             <baseHealthScale>1.8</baseHealthScale>
-            <wildness>0.50</wildness>
+            <wildness>0.75</wildness>
+            <roamMtbDays>2</roamMtbDays>
             <manhunterOnTameFailChance>0.05</manhunterOnTameFailChance>
             <manhunterOnDamageChance>0.15</manhunterOnDamageChance>
-            <gestationPeriodDays>24</gestationPeriodDays>
+            <gestationPeriodDays>5.661</gestationPeriodDays>
             <lifeExpectancy>15</lifeExpectancy>
             <litterSizeCurve>
                 <points>
@@ -135,7 +136,7 @@
                     <li>FibrousMechanites</li>
                     <li>SensoryMechanites</li>
                 </masterImmunities>
-                <tickInterval>2000</tickInterval>
+                <tickInterval>2500</tickInterval>
             </li>
             <li Class="FabledCervidae.CompProperties_SexualDimorphism">
                 <maleRRangeOne>0.25 ~ 0.5</maleRRangeOne>
@@ -168,6 +169,11 @@
                 <targetAcquireRadius>20</targetAcquireRadius>
                 <disputeDuration>600</disputeDuration>
                 <fightChance>0.11</fightChance>
+            </li>
+            <li Class="FabledCervidae.ModExtension_ButcherDrops">
+                <adultAntler>FC_MirelungAntler</adultAntler>
+                <dropChance>0.5</dropChance>
+                <extraDropChance>0.2</extraDropChance>
             </li>
         </modExtensions>
     </ThingDef>

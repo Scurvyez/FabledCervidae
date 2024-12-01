@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+    <GeneDef>
+        <defName>FC_Immunities_Scire</defName>
+        <label>scire immunity transference</label>
+        <description>Carriers of this gene gain an immense natural resistance to the flu, hypothermia, and frostbite via a strong metaphysical bond with a colony scire.</description>
+        <iconPath>UI/Icons/Genes/Gene_StrongImmunity</iconPath>
+        <displayOrderInCategory>11</displayOrderInCategory>
+        <selectionWeight>0</selectionWeight>
+        <biostatCpx>0</biostatCpx>
+        <statFactors>
+            <ImmunityGainSpeed>10</ImmunityGainSpeed>
+        </statFactors>
+        <makeImmuneTo>
+            <li>Flu</li>
+            <li>Hypothermia</li>
+            <li>Frostbite</li>
+        </makeImmuneTo>
+    </GeneDef>
+
+</Defs>

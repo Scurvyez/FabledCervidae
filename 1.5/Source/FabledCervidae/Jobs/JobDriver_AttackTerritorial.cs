@@ -100,7 +100,7 @@ namespace FabledCervidae
             animal.mindState.meleeThreat = null;
             animal.jobs.StopAll();
         }
-
+        
         private static void SetRelaxedState(Pawn animal)
         {
             animal?.Drawer?.renderer?.SetAnimation(null);
@@ -109,7 +109,7 @@ namespace FabledCervidae
             Job walkAwayJob = JobMaker.MakeJob(JobDefOf.GotoWander);
             animal.jobs.StartJob(walkAwayJob, JobCondition.Succeeded, null, resumeCurJobAfterwards: false);
         }
-
+        
         public override bool IsContinuation(Job j)
         {
             return job.GetTarget(TargetIndex.A) == j.GetTarget(TargetIndex.A);

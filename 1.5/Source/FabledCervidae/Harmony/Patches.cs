@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using System.Reflection.Emit;
 using System.Text;
 using HarmonyLib;
@@ -47,6 +48,10 @@ namespace FabledCervidae
             
             harmony.Patch(original: AccessTools.Method(typeof(WildAnimalSpawner), "CommonalityOfAnimalNow"),
                 prefix: new HarmonyMethod(typeof(Patches), nameof(WildAnimalSpawnerCommonalityOfAnimalNow_Prefix)));
+
+            harmony.Patch(original: AccessTools.Method(typeof(GenRecipe), "MakeRecipeProducts"),
+                postfix: new HarmonyMethod(typeof(Patches), nameof(MakeRecipeProducts_Postfix)));
+
         }
         
         private static void ParallelGetPreRenderResults_Prefix(PawnRenderer __instance, ref Vector3 drawLoc, Pawn ___pawn)
@@ -142,13 +147,35 @@ namespace FabledCervidae
         
         public static bool WildAnimalSpawnerCommonalityOfAnimalNow_Prefix(PawnKindDef def, ref float __result)
         {
-            if (FCMod._settings.animalToggle != null && FCMod._settings.animalToggle.ContainsKey(def.defName))
+            if (FCMod.Settings.animalToggle == null ||
+                !FCMod.Settings.animalToggle.TryGetValue(def.defName, out bool value)) return true;
+            if (!value) return true;
+            __result = 0f;
+            
+            return false;
+        }
+        
+        public static void MakeRecipeProducts_Postfix(ref IEnumerable<Thing> __result, Thing dominantIngredient)
+        {
+            List<Thing> newResult = __result.ToList();
+
+            if (dominantIngredient is not Corpse corpse) return;
+            Pawn innerPawn = corpse.InnerPawn;
+            RaceProperties raceProps = innerPawn.def?.race;
+            
+            if (innerPawn.ageTracker.CurLifeStage == FCDefOf.AnimalAdult && 
+                innerPawn.gender == Gender.Male &&
+                raceProps?.body == FCDefOf.FC_QuadrupedAnimalWithHoovesAndAntlers)
             {
-                if (!FCMod._settings.animalToggle[def.defName]) return true;
-                __result = 0f;
-                return false;
+                ModExtension_ButcherDrops ext = innerPawn.def?.GetModExtension<ModExtension_ButcherDrops>();
+                
+                if (ext == null || !Rand.Chance(ext.dropChance)) return;
+                Thing antler = ThingMaker.MakeThing(ext.adultAntler);
+                antler.stackCount = Rand.Chance(ext.extraDropChance) ? 2 : 1;
+                newResult.Add(antler);
             }
-            return true;
+            
+            __result = newResult;
         }
     }
 }

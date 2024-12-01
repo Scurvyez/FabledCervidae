@@ -4,10 +4,10 @@
     <ThingDef ParentName="AnimalThingBase">
         <defName>FC_Scire</defName>
         <label>scire</label>
-        <description>Scires are deer-like creatures dwelling primarily in temperate to freezing-cold regions. While female scires appear nonthreatening and rather mundane their male counterparts are equipped with massive antlers capable of inflicting horrific damage.\n\nAlthough not of this realm, they seem to have no trouble navigating this world. They are the protectors of the forest and the afterlife.\n\nThese beasts area capable of healing bonded pawns of certain cold weather afflictions.</description>
+        <description>Scires are deer-like creatures dwelling primarily in temperate to freezing-cold regions. While female scires appear nonthreatening and rather mundane their male counterparts are equipped with massive antlers capable of inflicting horrific damage.\n\nAlthough not of this realm, they seem to have no trouble navigating this world. They are the protectors of the forest and the afterlife and are faster than terrestrial species.\n\nThese beasts area capable of healing bonded pawns of certain cold weather afflictions.</description>
         <statBases>
-            <MoveSpeed>5.5</MoveSpeed>
-            <ComfyTemperatureMin>-40</ComfyTemperatureMin>
+            <MoveSpeed>5.725</MoveSpeed>
+            <ComfyTemperatureMin>-100</ComfyTemperatureMin>
             <MarketValue>350</MarketValue>
         </statBases>
         <tradeTags>
@@ -42,18 +42,18 @@
                 <power>8</power>
                 <cooldownTime>2</cooldownTime>
                 <linkedBodyPartsGroup>Teeth</linkedBodyPartsGroup>
-                <chanceFactor>0.5</chanceFactor>
+                <chanceFactor>0.3</chanceFactor>
             </li>
             <li>
                 <label>antlers</label>
                 <capacities>
                     <li>Blunt</li>
                 </capacities>
-                <power>15</power>
-                <cooldownTime>4</cooldownTime>
-                <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+                <power>10</power>
+                <cooldownTime>6</cooldownTime>
+                <linkedBodyPartsGroup>FC_AntlerAttackTool</linkedBodyPartsGroup>
                 <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
-                <chanceFactor>0.6</chanceFactor>
+                <chanceFactor>0.5</chanceFactor>
             </li>
         </tools>
         <race>
@@ -74,23 +74,24 @@
             <renderTree>FC_Animal_FabledCervidae</renderTree>
             <bloodDef>FC_Filth_ScireBlood</bloodDef>
             <leatherDef>FC_Leather_Scire</leatherDef>
-            <body>QuadrupedAnimalWithHooves</body>
+            <body>FC_QuadrupedAnimalWithHoovesAndAntlers</body>
             <foodType>VegetarianRoughAnimal</foodType>
             <meatLabel>scire shank</meatLabel>
             <herdAnimal>true</herdAnimal>
             <trainability>Advanced</trainability>
             <nameOnTameChance>1</nameOnTameChance>
             <petness>0.2</petness>
-            <nuzzleMtbHours>13</nuzzleMtbHours>
+            <nuzzleMtbHours>15</nuzzleMtbHours>
             <predator>false</predator>
             <maxPreyBodySize>1.0</maxPreyBodySize>
             <baseBodySize>1.0</baseBodySize>
             <baseHungerRate>0.19</baseHungerRate>
             <baseHealthScale>1.8</baseHealthScale>
-            <wildness>0.50</wildness>
+            <wildness>0.75</wildness>
+            <roamMtbDays>2</roamMtbDays>
             <manhunterOnTameFailChance>0.05</manhunterOnTameFailChance>
             <manhunterOnDamageChance>0.15</manhunterOnDamageChance>
-            <gestationPeriodDays>24</gestationPeriodDays>
+            <gestationPeriodDays>5.661</gestationPeriodDays>
             <lifeExpectancy>15</lifeExpectancy>
             <litterSizeCurve>
                 <points>
@@ -133,12 +134,12 @@
                     <li>Hypothermia</li>
                     <li>Frostbite</li>
                 </ownImmunities>
-                <masterImmunities>
+                <!-- <masterImmunities>
                     <li>Flu</li>
                     <li>Hypothermia</li>
                     <li>Frostbite</li>
-                </masterImmunities>
-                <tickInterval>2000</tickInterval>
+                </masterImmunities> -->
+                <tickInterval>2500</tickInterval>
             </li>
             <li Class="FabledCervidae.CompProperties_SexualDimorphism">
                 <maleRRangeOne>0 ~ 0</maleRRangeOne>
@@ -167,6 +168,11 @@
                 <targetAcquireRadius>20</targetAcquireRadius>
                 <disputeDuration>600</disputeDuration>
                 <fightChance>0.15</fightChance>
+            </li>
+            <li Class="FabledCervidae.ModExtension_ButcherDrops">
+                <adultAntler>FC_ScireAntler</adultAntler>
+                <dropChance>0.4</dropChance>
+                <extraDropChance>0.2</extraDropChance>
             </li>
         </modExtensions>
     </ThingDef>
