@@ -20,7 +20,8 @@ namespace FabledCervidae
             if (!req.HasThing || !ActiveFor(req.Thing)) return null;
             StringBuilder explanationBuilder = new ();
             
-            foreach (GameCondition activeCondition in req.Thing.Map.gameConditionManager.ActiveConditions)
+            foreach (GameCondition activeCondition 
+                     in req.Thing.Map.gameConditionManager.ActiveConditions)
             {
                 foreach (GameConditionStatOffsetPair pair in _ext.pairs)
                 {
@@ -33,16 +34,23 @@ namespace FabledCervidae
                     }
                 }
             }
-            return explanationBuilder.Length > 0 ? explanationBuilder.ToString() : null;
+            return explanationBuilder.Length > 0 
+                ? explanationBuilder.ToString() 
+                : null;
         }
         
         private bool ActiveFor(Thing t)
         {
-            if (t?.Map == null || !t.Position.IsValid || t.Map.gameConditionManager == null) return false;
+            if (t?.Map == null 
+                || !t.Position.IsValid 
+                || t.Map.gameConditionManager == null) 
+                return false;
+            
             _ext = t.def.GetModExtension<ModExtension_GameConditionStatOffsets>();
             
             if (_ext == null) return false;
-            foreach (GameCondition activeCondition in t.Map.gameConditionManager.ActiveConditions)
+            foreach (GameCondition activeCondition 
+                     in t.Map.gameConditionManager.ActiveConditions)
             {
                 foreach (GameConditionStatOffsetPair pair in _ext.pairs)
                 {

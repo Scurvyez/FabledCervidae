@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
-    <ThingDef ParentName="AnimalThingBase">
+    <FabledCervidae.ThingDefCervid ParentName="AnimalThingBase">
         <defName>FC_Infernihart</defName>
         <label>infernihart</label>
-        <description>Inferniharts are cervids and closely resemble several terrestrial species with similar move speed, minus the protective armor on their backs. They can be found in hotter and dryer climates.\n\nIn addition to sporting coats of red fur in various hues, these creatures can aid in the rapid healing of heatstroke and burn wounds in bonded pawns.</description>
+        <description>Inferniharts are cervids and closely resemble several terrestrial species with similar move speed, minus the protective armor on their backs. They can be found in hotter and dryer climates.\n\nIn addition to sporting coats of red and green fur, these creatures possess bundles of tightly packed specialized healing cells which combat the effects of heatstroke and rapidly heal burn wounds.</description>
         <statBases>
             <MoveSpeed>5.5</MoveSpeed>
             <ComfyTemperatureMin>-10</ComfyTemperatureMin>
@@ -128,17 +128,13 @@
             <soundMeleeMiss>Pawn_Melee_BigBash_Miss</soundMeleeMiss>
         </race>
         <comps>
-            <!-- <li Class="FabledCervidae.CompProperties_DiseaseImmunity">
+            <li Class="FabledCervidae.CompProperties_DiseaseImmunity">
                 <ownImmunities>
                     <li>Heatstroke</li>
                     <li>Burn</li>
                 </ownImmunities>
-                <masterImmunities>
-                    <li>Heatstroke</li>
-                    <li>Burn</li>
-                </masterImmunities>
                 <tickInterval>2500</tickInterval>
-            </li> -->
+            </li>
             <li Class="FabledCervidae.CompProperties_SexualDimorphism">
                 <maleRRangeOne>1 ~ 1</maleRRangeOne>
                 <maleGRangeOne>0.4 ~ 0.6</maleGRangeOne>
@@ -182,7 +178,7 @@
                 <extraDropChance>0.2</extraDropChance>
             </li>
         </modExtensions>
-    </ThingDef>
+    </FabledCervidae.ThingDefCervid>
 
     <PawnKindDef ParentName="AnimalKindBase">
         <defName>FC_Infernihart</defName>

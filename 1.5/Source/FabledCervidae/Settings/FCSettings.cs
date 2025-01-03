@@ -7,15 +7,17 @@ namespace FabledCervidae
 {
     public class FCSettings : ModSettings
     {
-        private static Vector2 scrollPosition = Vector2.zero;
         public Dictionary<string, bool> animalToggle = new ();
-        private List<string> animalKeys;
-        private List<bool> animalValues;
+        
+        private static Vector2 _scrollPosition = Vector2.zero;
+        private List<string> _animalKeys;
+        private List<bool> _animalValues;
         
         public override void ExposeData()
         {
             base.ExposeData();
-            Scribe_Collections.Look(ref animalToggle, "animalToggle", LookMode.Value, LookMode.Value, ref animalKeys, ref animalValues);
+            Scribe_Collections.Look(ref animalToggle, "animalToggle", 
+                LookMode.Value, LookMode.Value, ref _animalKeys, ref _animalValues);
         }
         
         public void DoWindowContents(Rect inRect)
@@ -29,7 +31,7 @@ namespace FabledCervidae
             float itemHeight = itemWidth + 200f;
 
             Rect viewRect = new(0f, 0f, totalWidth, itemHeight);
-            Widgets.BeginScrollView(inRect, ref scrollPosition, viewRect, true);
+            Widgets.BeginScrollView(inRect, ref _scrollPosition, viewRect);
             ls.Begin(viewRect);
 
             for (int i = 0; i < keyNames.Count; i++)
@@ -43,9 +45,11 @@ namespace FabledCervidae
                 Rect textureRect = new(xPos, labelRect.yMax + 10f, itemWidth, itemWidth);
 
                 PawnKindDef pawnKindDef = PawnKindDef.Named(key);
-                Texture2D texture = ContentFinder<Texture2D>.Get($"FabledCervidae/UI/{pawnKindDef.defName}", false);
+                Texture2D texture = ContentFinder<Texture2D>.Get(
+                    $"FabledCervidae/UI/{pawnKindDef.defName}", false);
 
-                Widgets.Label(labelRect, "Disable " + pawnKindDef.LabelCap.Colorize(FCLog.MessageMsgCol));
+                Widgets.Label(labelRect, 
+                    "Disable " + pawnKindDef.LabelCap.Colorize(FCLog.MessageMsgCol));
                 TooltipHandler.TipRegion(labelRect, "FC_AnimalToggleTooltip".Translate());
                 Widgets.Checkbox(checkboxRect.x, checkboxRect.y, ref state, 24f);
                 

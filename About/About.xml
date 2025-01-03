@@ -3,6 +3,7 @@
     <name>Fabled Cervidae</name>
     <author>Scurvyez</author>
     <packageId>Scurvyez.FabledCervidae</packageId>
+    <url>https://github.com/Scurvyez/FabledCervidae</url>
     <supportedVersions>
         <li>1.5</li>
     </supportedVersions>
@@ -26,6 +27,9 @@ Compatibilities:
 - Medieval Overhaul
 - More Vanilla Biomes
 
+Incompatibilities:
+- *shouldn't be any :)
+- reports without proper logs will be ignored as per my last email
 
 Features:
 - All species have sexual dimorphism to some degree meaning the males and females have different physical characteristics such as colors and patterns.
@@ -37,6 +41,14 @@ Features:
 
     <loadAfter>
         <li>Ludeon.RimWorld</li>
+        <li>brrainz.harmony</li>
+        <li>sarg.alphabiomes</li>
+        <li>sarg.alphaimplants</li>
+        <li>regrowth.botr.core</li>
+        <li>regrowth.botr.aspenforest</li>
+        <li>regrowth.botr.boilingforest</li>
+        <li>dankpyon.medieval.overhaul</li>
+        <li>zylle.morevanillabiomes</li>
     </loadAfter>
 
 </ModMetaData>

@@ -43,8 +43,8 @@ namespace FabledCervidae
             harmony.Patch(original: AccessTools.Method(typeof(PawnRenderer), "ParallelGetPreRenderResults"),
                 prefix: new HarmonyMethod(typeof(Patches), nameof(ParallelGetPreRenderResults_Prefix)));
             
-            // harmony.Patch(original: AccessTools.Method(typeof(ThingDef), "SpecialDisplayStats"),
-            //     postfix: new HarmonyMethod(typeof(Patches), nameof(SpecialDisplayStats_Postfix)));
+            harmony.Patch(original: AccessTools.Method(typeof(ThingDef), "SpecialDisplayStats"), 
+                 postfix: new HarmonyMethod(typeof(Patches), nameof(SpecialDisplayStats_Postfix)));
             
             harmony.Patch(original: AccessTools.Method(typeof(WildAnimalSpawner), "CommonalityOfAnimalNow"),
                 prefix: new HarmonyMethod(typeof(Patches), nameof(WildAnimalSpawnerCommonalityOfAnimalNow_Prefix)));
@@ -101,54 +101,31 @@ namespace FabledCervidae
             drawLoc += offset.Value;
         }
         
-        /*private static void SpecialDisplayStats_Postfix(ThingDef __instance, ref IEnumerable<StatDrawEntry> __result)
+        private static void SpecialDisplayStats_Postfix(ThingDef __instance, ref IEnumerable<StatDrawEntry> __result)
         {
             if (!__instance.HasComp(typeof(Comp_DiseaseImmunity)) || __instance.IsCorpse) return;
             CompProperties_DiseaseImmunity compProps = __instance.GetCompProperties<CompProperties_DiseaseImmunity>();
             
             if (compProps == null) return;
-            if (!compProps.ownImmunities.NullOrEmpty())
+            if (compProps.ownImmunities.NullOrEmpty()) return;
+            string ownImmunityLabel = "FC_OwnImmunitiesLabel".Translate();
+            string ownImmunityDesc = "FC_OwnImmunitiesDesc".Translate();
+            
+            StringBuilder ownImmunityList = new ();
+            foreach (HediffDef immunity in compProps.ownImmunities)
             {
-                string ownImmunityLabel = "FC_OwnImmunitiesLabel".Translate();
-                string ownImmunityDesc = "FC_OwnImmunitiesDesc".Translate();
-
-                StringBuilder ownImmunityList = new ();
-                foreach (HediffDef immunity in compProps.ownImmunities)
-                {
-                    ownImmunityList.AppendLine("   - " + immunity.LabelCap);
-                }
-
-                string reportText = ownImmunityDesc + "\n\n" + ownImmunityList;
-                __result = __result.AddItem(new StatDrawEntry(
-                    StatCategoryDefOf.PawnMisc,
-                    ownImmunityLabel,
-                    "x" + compProps.ownImmunities.Count,
-                    reportText,
-                    2
-                ));
+                ownImmunityList.AppendLine("   - " + immunity.LabelCap);
             }
-
-            if (compProps.masterImmunities.NullOrEmpty()) return;
-            {
-                string masterImmunityLabel = "FC_MasterImmunitiesLabel".Translate();
-                string masterImmunityDesc = "FC_MasterImmunitiesDesc".Translate();
-
-                StringBuilder masterImmunityList = new ();
-                foreach (HediffDef immunity in compProps.masterImmunities)
-                {
-                    masterImmunityList.AppendLine("   - " + immunity.LabelCap);
-                }
-
-                string reportText = masterImmunityDesc + "\n\n" + masterImmunityList;
-                __result = __result.AddItem(new StatDrawEntry(
-                    StatCategoryDefOf.PawnMisc,
-                    masterImmunityLabel,
-                    "x" + compProps.masterImmunities.Count,
-                    reportText,
-                    1
-                ));
-            }
-        }*/
+                
+            string reportText = ownImmunityDesc + "\n\n" + ownImmunityList;
+            __result = __result.AddItem(new StatDrawEntry(
+                StatCategoryDefOf.PawnMisc,
+                ownImmunityLabel,
+                "x" + compProps.ownImmunities.Count,
+                reportText,
+                2
+            ));
+        }
         
         public static bool WildAnimalSpawnerCommonalityOfAnimalNow_Prefix(PawnKindDef def, ref float __result)
         {
@@ -204,7 +181,7 @@ namespace FabledCervidae
             };
             
             if (geneToAdd == null) return;
-            masterColonist.genes.AddGene(geneToAdd, true);
+            masterColonist.genes.AddGene(geneToAdd, false);
             FCLog.Message($"{geneToAdd.LabelCap} added to {masterColonist.NameFullColored}");
         }
         

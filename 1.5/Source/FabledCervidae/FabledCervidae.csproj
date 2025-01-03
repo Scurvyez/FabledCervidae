@@ -68,7 +68,9 @@
     <Compile Include="Defs\ModExtension_GameConditionStatOffsets.cs" />
     <Compile Include="Defs\ModExtension_Resistances.cs" />
     <Compile Include="Defs\ModExtension_TerritorialFighting.cs" />
-    <Compile Include="FabledCervidaeMain.cs" />
+    <Compile Include="Defs\ThingDefCervid.cs" />
+    <Compile Include="FCInfo.cs" />
+    <Compile Include="FCMain.cs" />
     <Compile Include="Harmony\Patches.cs" />
     <Compile Include="Harmony\PatchesHelper.cs" />
     <Compile Include="Jobs\JobDriver_AttackTerritorial.cs" />

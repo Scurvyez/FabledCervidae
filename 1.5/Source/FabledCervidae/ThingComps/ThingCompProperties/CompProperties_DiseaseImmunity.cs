@@ -6,7 +6,7 @@ namespace FabledCervidae
     public class CompProperties_DiseaseImmunity : CompProperties
     {
         public List<HediffDef> ownImmunities = new ();
-        public int tickInterval = 250;
+        public int tickInterval = 2500;
         
         public CompProperties_DiseaseImmunity()
         {

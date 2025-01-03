@@ -10,7 +10,8 @@ namespace FabledCervidae
         {
             return pawn.Map?.mapPawns?.FreeColonistsSpawned
                 .Any(colonist => 
-                    pawn.relations.DirectRelationExists(PawnRelationDefOf.Bond, colonist)) ?? false;
+                    pawn.relations.DirectRelationExists(PawnRelationDefOf.Bond, colonist)) 
+                   ?? false;
         }
 
         public static readonly List<GeneDef> CervidVitalityGenes =

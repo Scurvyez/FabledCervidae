@@ -5,13 +5,11 @@
         <defName>FC_Immunities_Scire</defName>
         <label>scire vitality transference</label>
         <description>Carriers of this gene gain an immense natural resistance to the flu, hypothermia, and frostbite via a strong metaphysical bond with a colony scire.</description>
-        <iconPath>UI/Icons/Genes/Gene_StrongImmunity</iconPath>
-        <displayOrderInCategory>11</displayOrderInCategory>
+        <iconPath>FabledCervidae/UI/Icons/Genes/Gene_ScireVitality</iconPath>
+        <randomChosen>false</randomChosen>
+        <displayOrderInCategory>50</displayOrderInCategory>
         <selectionWeight>0</selectionWeight>
         <biostatCpx>0</biostatCpx>
-        <statFactors>
-            <ImmunityGainSpeed>20</ImmunityGainSpeed>
-        </statFactors>
         <makeImmuneTo>
             <li>Flu</li>
             <li>Hypothermia</li>
@@ -23,13 +21,11 @@
         <defName>FC_Immunities_Mirelung</defName>
         <label>mirelung vitality transference</label>
         <description>Carriers of this gene gain an immense natural resistance to fibrous mechanites and sensory mechanites via a strong metaphysical bond with a colony mirelung.</description>
-        <iconPath>UI/Icons/Genes/Gene_StrongImmunity</iconPath>
-        <displayOrderInCategory>11</displayOrderInCategory>
+        <iconPath>FabledCervidae/UI/Icons/Genes/Gene_MirelungVitality</iconPath>
+        <randomChosen>false</randomChosen>
+        <displayOrderInCategory>50</displayOrderInCategory>
         <selectionWeight>0</selectionWeight>
         <biostatCpx>0</biostatCpx>
-        <statFactors>
-            <ImmunityGainSpeed>20</ImmunityGainSpeed>
-        </statFactors>
         <makeImmuneTo>
             <li>FibrousMechanites</li>
             <li>SensoryMechanites</li>
@@ -40,13 +36,11 @@
         <defName>FC_Immunities_Infernihart</defName>
         <label>infernihart vitality transference</label>
         <description>Carriers of this gene gain an immense natural resistance to heat stroke and burn injuries via a strong metaphysical bond with a colony infernihart.</description>
-        <iconPath>UI/Icons/Genes/Gene_StrongImmunity</iconPath>
-        <displayOrderInCategory>11</displayOrderInCategory>
+        <iconPath>FabledCervidae/UI/Icons/Genes/Gene_InfernihartVitality</iconPath>
+        <randomChosen>false</randomChosen>
+        <displayOrderInCategory>50</displayOrderInCategory>
         <selectionWeight>0</selectionWeight>
         <biostatCpx>0</biostatCpx>
-        <statFactors>
-            <ImmunityGainSpeed>20</ImmunityGainSpeed>
-        </statFactors>
         <makeImmuneTo>
             <li>Heatstroke</li>
             <li>Burn</li>
@@ -57,13 +51,11 @@
         <defName>FC_Immunities_Auravine</defName>
         <label>auravine vitality transference</label>
         <description>Carriers of this gene gain an immense natural resistance to the plague, flu, and malaria via a strong metaphysical bond with a colony auravine.</description>
-        <iconPath>UI/Icons/Genes/Gene_StrongImmunity</iconPath>
-        <displayOrderInCategory>11</displayOrderInCategory>
+        <iconPath>FabledCervidae/UI/Icons/Genes/Gene_AuravineVitality</iconPath>
+        <randomChosen>false</randomChosen>
+        <displayOrderInCategory>50</displayOrderInCategory>
         <selectionWeight>0</selectionWeight>
         <biostatCpx>0</biostatCpx>
-        <statFactors>
-            <ImmunityGainSpeed>20</ImmunityGainSpeed>
-        </statFactors>
         <makeImmuneTo>
             <li>Plague</li>
             <li>Flu</li>

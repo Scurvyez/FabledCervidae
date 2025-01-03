@@ -6,8 +6,24 @@
     <FC_AnimalToggleTooltip>Check to disable this animal from spawning naturally in biomes.</FC_AnimalToggleTooltip>
 
     <FC_OwnImmunitiesLabel>Own Immunities</FC_OwnImmunitiesLabel>
-    <FC_MasterImmunitiesLabel>Master's Immunities</FC_MasterImmunitiesLabel>
     <FC_OwnImmunitiesDesc>Whether through some unknown biological evolutionary detour or through divine creation, this animal has developed natural immunities to the following ailments.</FC_OwnImmunitiesDesc>
-    <FC_MasterImmunitiesDesc>Through even more mysterious ways this animal's powers are able to permeate its master's physical being and act as a protective barrier.\n\nIf this animal is bonded to a colonist that colonist will benefit from immunities to the afflictions listed below.</FC_MasterImmunitiesDesc>
+
+    <FC_BioScireDesc>When bonded these magnificent creatures transfer some of their natural ability to combat the flu, hypothermia, and frostbite. This is done by imparting a gene via some unknown method of transference directly into the bonded pawn.</FC_BioScireDesc>
+    <FC_BioMirelungDesc>When bonded these swamp-dwelling cervids impart a portion of their natual healing powers via a direct gene transfer to the bonded pawn. This connection helps combat fibrous and sensory mechanites.</FC_BioMirelungDesc>
+    <FC_BioInfernihartDesc>When bonded, inferniharts will impart some of their gene-line directly onto the bonded pawn in order to help ward off heatstroke and burn injuries.</FC_BioInfernihartDesc>
+    <FC_BioAuravineDesc>When bonded, auravine will, through means still unknown to scientists, grant the bonded pawn some of its natual healing abilities via gene expression. This ability will help combat the flu, plague, and malaria.</FC_BioAuravineDesc>
+
+    <FC_EasterEgg>You found me. Congrats! Have an awful day. :)</FC_EasterEgg>
+
+    <FC_Fact1>Scientific classification: Eukaryota, Animalia, Chordata, Mammalia, Artiodactyla, Pecora, Cervidae</FC_Fact1>
+    <FC_Fact2>Cervids are ruminant animals, meaning they are herbivorous grazing or browsing artiodactyls that are able to process plant-based foods by fermenting them in a specialized stomach chamber.</FC_Fact2>
+    <FC_Fact3>Cervids are ungulates. This means they have hooves. More specifically, they are even-toed (Artiodactyla) ungulates.</FC_Fact3>
+    <FC_Fact4>Cervids live in many different biomes. The vast majority of species live within temperate mixed deciduous forests, mountain mixed coniferous forests, tropical seasonal/dry forests, and savanna habitats.</FC_Fact4>
+    <FC_Fact5>Unlike the permanent horns of bovines, cervid antlers are temporary and regrow regularly. These antlers are shed every year.</FC_Fact5>
+    <FC_Fact6>The largest extant (living) cervid is the moose which is also the only species in the genus Alces. Adult males can be over 8 ft (2.44 m) and weight over 1,800 lbs (816.47).</FC_Fact6>
+    <FC_Fact7>As herbivores, cervids primarily eat grasses, forbs, sedges, trees, and shrubs with lichens being a solid second during winter at higher latitudes.</FC_Fact7>
+    <FC_Fact8>Although herbivores, there have been numerous reports of deer in Northern America eating dead alewives (an anadromous herring subspecies) that have washed up along shorelines.</FC_Fact8>
+    <FC_Fact9>Cervids are, unfortunately, a perfect host for many parasitic creatures such as brain worms. Brain worms are a helminth which drills holes through the brain in its search for a suitable place to lay eggs.</FC_Fact9>
+    <FC_Fact10>Cervids have a long history alongside humans. In Japanese Shintoism, the sika deer is believed to be a messenger to the gods while in Celtic mythology, Cernunnos is a Celtic stag god depicted on the 1st-century Pillar of the Boatmen.</FC_Fact10>
 
 </LanguageData>

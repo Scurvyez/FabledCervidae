@@ -12,7 +12,7 @@ namespace FabledCervidae
         private Vector2 _drawSize;
         private readonly MaterialPropertyBlock _mpb = new();
         
-        private const float fadeSpeed = 0.01f;
+        private const float FADE_SPEED = 0.01f;
         
         public CompProperties_GlowingEyes Props => (CompProperties_GlowingEyes)props;
 
@@ -26,7 +26,8 @@ namespace FabledCervidae
             {
                 _fadeProgress = shouldDraw switch
                 {
-                    true when parentPawn.pather.MovingNow => Mathf.Clamp(_fadeProgress + fadeSpeed, 0f, 1f),
+                    true when parentPawn.pather.MovingNow => 
+                        Mathf.Clamp(_fadeProgress + FADE_SPEED, 0f, 1f),
                     false => 0f,
                     _ => _fadeProgress
                 };
@@ -45,7 +46,11 @@ namespace FabledCervidae
 
         private bool ShouldDrawEyes(Pawn pawn)
         {
-            if (!pawn.Awake() && !Props.drawWhileSleeping && pawn.GetPosture() != PawnPosture.Standing) return false;
+            if (!pawn.Awake() 
+                && !Props.drawWhileSleeping 
+                && pawn.GetPosture() != PawnPosture.Standing) 
+                return false;
+            
             if (!Props.drawAtNight) return true;
             float currentSunGlow = GenCelestial.CurCelestialSunGlow(pawn.Map);
             return !(currentSunGlow > Props.sunlightThreshold);
@@ -54,16 +59,17 @@ namespace FabledCervidae
         private void CacheEyeGraphic(Pawn pawn)
         {
             PawnKindDef pawnKind = pawn.kindDef;
+            PawnKindLifeStage curLSI = pawnKind.lifeStages[pawn.ageTracker.CurLifeStageIndex];
             string eyeGraphicPath = null;
 
             switch (pawn.gender)
             {
                 case Gender.Female:
-                    _drawSize = pawnKind.lifeStages[pawn.ageTracker.CurLifeStageIndex].femaleGraphicData.Graphic.drawSize;
+                    _drawSize = curLSI.femaleGraphicData.Graphic.drawSize;
                     eyeGraphicPath = Props.eyeGraphicFemale;
                     break;
                 case Gender.Male:
-                    _drawSize = pawnKind.lifeStages[pawn.ageTracker.CurLifeStageIndex].bodyGraphicData.Graphic.drawSize;
+                    _drawSize = curLSI.bodyGraphicData.Graphic.drawSize;
                     eyeGraphicPath = Props.eyeGraphicMale;
                     break;
                 case Gender.None:
@@ -80,13 +86,17 @@ namespace FabledCervidae
         public override void PostDraw()
         {
             base.PostDraw();
-            if (_shouldDrawEyes && _eyeGraphic != null && parent is Pawn parentPawn)
+            if (_shouldDrawEyes 
+                && _eyeGraphic != null 
+                && parent is Pawn parentPawn)
             {
-                DrawGlowingEyeGraphic(parentPawn, _eyeGraphic, parentPawn.Rotation, _drawSize, _fadeProgress);
+                DrawGlowingEyeGraphic(parentPawn, _eyeGraphic, 
+                    parentPawn.Rotation, _drawSize, _fadeProgress);
             }
         }
 
-        private void DrawGlowingEyeGraphic(Pawn pawn, Graphic eyeGraphic, Rot4 eyeRotation, Vector2 eyeDrawSize, float eyeFadeProgress)
+        private void DrawGlowingEyeGraphic(Pawn pawn, Graphic eyeGraphic, 
+            Rot4 eyeRotation, Vector2 eyeDrawSize, float eyeFadeProgress)
         {
             PawnKindLifeStage curLifeStage = pawn.ageTracker.CurKindLifeStage;
             GraphicData graphicData = pawn.gender == Gender.Female
@@ -107,11 +117,15 @@ namespace FabledCervidae
             Vector3 drawPos = pawn.Drawer.DrawPos + offset;
             drawPos.y += 0.0075f;
 
-            Material fadedMat = FadedMaterialPool.FadedVersionOf(eyeGraphic.MatAt(eyeRotation), eyeFadeProgress);
-            Matrix4x4 matrix = Matrix4x4.TRS(drawPos, Quaternion.identity, new Vector3(eyeDrawSize.x, 1f, eyeDrawSize.y));
+            Material fadedMat = FadedMaterialPool.FadedVersionOf(
+                eyeGraphic.MatAt(eyeRotation), eyeFadeProgress);
+            Matrix4x4 matrix = Matrix4x4.TRS(
+                drawPos, Quaternion.identity, 
+                new Vector3(eyeDrawSize.x, 1f, eyeDrawSize.y));
             _mpb.Clear();
             
-            _mpb.SetColor(ShaderPropertyIDs.Color, new Color(Props.eyeColor.r, Props.eyeColor.g, Props.eyeColor.b, eyeFadeProgress));
+            _mpb.SetColor(ShaderPropertyIDs.Color, 
+                new Color(Props.eyeColor.r, Props.eyeColor.g, Props.eyeColor.b, eyeFadeProgress));
             Graphics.DrawMesh(MeshPool.plane10, matrix, fadedMat, 0, null, 0, _mpb);
         }
 

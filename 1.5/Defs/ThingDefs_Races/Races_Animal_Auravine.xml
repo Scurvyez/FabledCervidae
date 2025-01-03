@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
-    <ThingDef ParentName="AnimalThingBase">
+    <FabledCervidae.ThingDefCervid ParentName="AnimalThingBase">
         <defName>FC_Auravine</defName>
         <label>auravine</label>
-        <description>Auravines are grand beasts often found in cooler and temperate climates. Their hides and hair resemble a beautiful aurora in the northern night skies.\n\nIt is unknown how but these magical creatures are able to cure certain afflictions in bonded pawns.\n\nThey are just as fast on their hooves as terrestrial deer species.</description>
+        <description>Auravines are grand beasts often found in cooler and temperate climates. Their hides and hair resemble a beautiful aurora in the northern night skies.\n\nIt is unknown how but these magical creatures are able to cure certain afflictions in their bloodstreams.\n\nThey are just as fast on their hooves as terrestrial deer species.</description>
         <statBases>
             <MoveSpeed>5.5</MoveSpeed>
             <ComfyTemperatureMin>-35</ComfyTemperatureMin>
@@ -129,19 +129,14 @@
             <soundMeleeMiss>Pawn_Melee_BigBash_Miss</soundMeleeMiss>
         </race>
         <comps>
-            <!-- <li Class="FabledCervidae.CompProperties_DiseaseImmunity">
+            <li Class="FabledCervidae.CompProperties_DiseaseImmunity">
                 <ownImmunities>
                     <li>Animal_Plague</li>
                     <li>Animal_Flu</li>
                     <li>Malaria</li>
                 </ownImmunities>
-                <masterImmunities>
-                    <li>Plague</li>
-                    <li>Flu</li>
-                    <li>Malaria</li>
-                </masterImmunities>
                 <tickInterval>2500</tickInterval>
-            </li> -->
+            </li>
             <li Class="FabledCervidae.CompProperties_SexualDimorphism">
                 <maleRRangeOne>0.6 ~ 1</maleRRangeOne>
                 <maleGRangeOne>0.35 ~ 0.5</maleGRangeOne>
@@ -176,7 +171,7 @@
                 <extraDropChance>0.2</extraDropChance>
             </li>
         </modExtensions>
-    </ThingDef>
+    </FabledCervidae.ThingDefCervid>
 
     <PawnKindDef ParentName="AnimalKindBase">
         <defName>FC_Auravine</defName>

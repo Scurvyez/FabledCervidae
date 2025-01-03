@@ -7,10 +7,10 @@ namespace FabledCervidae
 {
     public class FCMod : Mod
     {
-        public List<PawnKindDef> AllFCAnimals = [];
         public static FCSettings Settings;
-        
-        private string _defNamePrefix = "FC_";
+
+        private const string DEFNAME_PREFIX = "FC_";
+        private List<PawnKindDef> _allFcAnimals = [];
         
         public FCMod(ModContentPack content) : base(content)
         {
@@ -25,14 +25,14 @@ namespace FabledCervidae
         public override void DoSettingsWindowContents(Rect inRect)
         {
             base.DoSettingsWindowContents(inRect);
-            AllFCAnimals = (from currentDef in DefDatabase<PawnKindDef>.AllDefs
-                where currentDef.defName.Contains(_defNamePrefix)
+            _allFcAnimals = (from currentDef in DefDatabase<PawnKindDef>.AllDefs
+                where currentDef.defName.Contains(DEFNAME_PREFIX)
                 orderby currentDef.defName
                 select currentDef).ToList();
 
             Settings.animalToggle ??= new Dictionary<string, bool>();
             
-            foreach (PawnKindDef pkd in AllFCAnimals)
+            foreach (PawnKindDef pkd in _allFcAnimals)
             {
                 if (!Settings.animalToggle.ContainsKey(pkd.defName))
                 {

@@ -75,6 +75,20 @@
                                             <coverage>0.7</coverage>
                                             <depth>Inside</depth>
                                         </li>
+                                        <li>
+                                            <def>FC_Antler</def>
+                                            <coverage>0.12</coverage>
+                                            <groups>
+                                                <li>FC_AntlerAttackTool</li>
+                                            </groups>
+                                        </li>
+                                        <li>
+                                            <def>FC_Antler</def>
+                                            <coverage>0.12</coverage>
+                                            <groups>
+                                                <li>FC_AntlerAttackTool</li>
+                                            </groups>
+                                        </li>
                                     </parts>
                                 </li>
                                 <li>
@@ -100,20 +114,6 @@
                                 <li>
                                     <def>Nose</def>
                                     <coverage>0.35</coverage>
-                                </li>
-                                <li>
-                                    <def>FC_Antler</def>
-                                    <coverage>0.075</coverage>
-                                    <groups>
-                                        <li>FC_AntlerAttackTool</li>
-                                    </groups>
-                                </li>
-                                <li>
-                                    <def>FC_Antler</def>
-                                    <coverage>0.075</coverage>
-                                    <groups>
-                                        <li>FC_AntlerAttackTool</li>
-                                    </groups>
                                 </li>
                                 <li>
                                     <def>AnimalJaw</def>

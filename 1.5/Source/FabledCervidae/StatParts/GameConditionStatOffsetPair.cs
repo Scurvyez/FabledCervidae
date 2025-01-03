@@ -24,7 +24,8 @@ namespace FabledCervidae
                 }
                 else if (childNode.Name == "gameCondition")
                 {
-                    DirectXmlCrossRefLoader.RegisterObjectWantsCrossRef(this, "gameCondition", childNode.InnerText);
+                    DirectXmlCrossRefLoader.RegisterObjectWantsCrossRef(
+                        this, "gameCondition", childNode.InnerText);
                 }
             }
         }

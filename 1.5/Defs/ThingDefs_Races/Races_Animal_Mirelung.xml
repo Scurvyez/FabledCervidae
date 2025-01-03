@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
-    <ThingDef ParentName="AnimalThingBase">
+    <FabledCervidae.ThingDefCervid ParentName="AnimalThingBase">
         <defName>FC_Mirelung</defName>
         <label>mirelung</label>
-        <description>This bog-dwelling creature loves the humidity of swampy environments. It's one with the swamps and will defend its home with devout passion though it is slightly slower than terrestrial species.\n\nWhile not as aesthetically glorious as other cervid species, its leather can absorb a great deal of damage from blunt objects making it a sought-after animal for its hide.\n\nBecause of its strong symbiotic relationship with the ecosystem, it is immune to artificial irritants such as mechanites. This immunity can even be passed on to bonded pawns.</description>
+        <description>This bog-dwelling creature loves the humidity of swampy environments. It's one with the swamps and will defend its home with devout passion though it is slightly slower than terrestrial species.\n\nWhile not as aesthetically glorious as other cervid species, its leather can absorb a great deal of damage from blunt objects making it a sought-after animal for its hide.\n\nBecause of its strong symbiotic relationship with the ecosystem, it is immune to artificial irritants such as mechanites.</description>
         <statBases>
             <MoveSpeed>5.25</MoveSpeed>
             <ComfyTemperatureMin>-15</ComfyTemperatureMin>
@@ -123,7 +123,7 @@
             <soundMeleeMiss>Pawn_Melee_BigBash_Miss</soundMeleeMiss>
         </race>
         <comps>
-            <!-- <li Class="FabledCervidae.CompProperties_DiseaseImmunity">
+            <li Class="FabledCervidae.CompProperties_DiseaseImmunity">
                 <ownImmunities>
                     <li>Animal_Plague</li>
                     <li>GutWorms</li>
@@ -132,12 +132,8 @@
                     <li>FibrousMechanites</li>
                     <li>SensoryMechanites</li>
                 </ownImmunities>
-                <masterImmunities>
-                    <li>FibrousMechanites</li>
-                    <li>SensoryMechanites</li>
-                </masterImmunities>
                 <tickInterval>2500</tickInterval>
-            </li> -->
+            </li>
             <li Class="FabledCervidae.CompProperties_SexualDimorphism">
                 <maleRRangeOne>0.25 ~ 0.5</maleRRangeOne>
                 <maleGRangeOne>0.1 ~ 0.2</maleGRangeOne>
@@ -176,7 +172,7 @@
                 <extraDropChance>0.2</extraDropChance>
             </li>
         </modExtensions>
-    </ThingDef>
+    </FabledCervidae.ThingDefCervid>
 
     <PawnKindDef ParentName="AnimalKindBase">
         <defName>FC_Mirelung</defName>

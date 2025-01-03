@@ -5,21 +5,25 @@ namespace FabledCervidae
 {
     public class PawnRenderNode_Animal_SexualDimorphism : PawnRenderNode_AnimalPart
     {
-        public PawnRenderNode_Animal_SexualDimorphism(Pawn pawn, PawnRenderNodeProperties props, PawnRenderTree tree) 
+        public PawnRenderNode_Animal_SexualDimorphism(Pawn pawn, 
+            PawnRenderNodeProperties props, PawnRenderTree tree) 
             : base(pawn, props, tree)
         {
             
         }
-
+        
         public override Graphic GraphicFor(Pawn pawn)
         {
-            if (pawn.Drawer.renderer.CurRotDrawMode == RotDrawMode.Dessicated) return base.GraphicFor(pawn);
-            if (!pawn.TryGetComp(out Comp_SexualDimorphism comp)) return base.GraphicFor(pawn);
+            if (pawn.Drawer.renderer.CurRotDrawMode == RotDrawMode.Dessicated) 
+                return base.GraphicFor(pawn);
+            if (!pawn.TryGetComp(out Comp_SexualDimorphism comp)) 
+                return base.GraphicFor(pawn);
 
             PawnKindLifeStage curKindLifeStage = pawn.ageTracker.CurKindLifeStage;
+            Shader cutoutComplex = ShaderDatabase.CutoutComplex;
             Graphic sexSpecificGraphic;
             Vector2 finalDrawSize;
-            
+
             switch (pawn.gender)
             {
                 case Gender.Male:
@@ -30,19 +34,22 @@ namespace FabledCervidae
                     sexSpecificGraphic = curKindLifeStage.femaleGraphicData.Graphic;
                     finalDrawSize = curKindLifeStage.femaleGraphicData.drawSize;
                     break;
+                case Gender.None:
                 default:
                     return base.GraphicFor(pawn);
             }
-            
+
             switch (pawn.Drawer.renderer.CurRotDrawMode)
             {
                 case RotDrawMode.Fresh:
-                    return GraphicDatabase.Get<Graphic_Multi>(sexSpecificGraphic.path, ShaderDatabase.CutoutComplex, 
+                    return GraphicDatabase.Get<Graphic_Multi>(
+                        sexSpecificGraphic.path, cutoutComplex,
                         finalDrawSize, comp.newColor, comp.newColorTwo);
-                case RotDrawMode.Rotting:
+                case RotDrawMode.Rotting or RotDrawMode.Dessicated:
                     Color rottenColor = PawnRenderUtility.GetRottenColor(comp.newColor);
                     Color rottenColorTwo = PawnRenderUtility.GetRottenColor(comp.newColorTwo);
-                    return GraphicDatabase.Get<Graphic_Multi>(sexSpecificGraphic.path, ShaderDatabase.CutoutComplex, 
+                    return GraphicDatabase.Get<Graphic_Multi>(
+                        sexSpecificGraphic.path, cutoutComplex,
                         finalDrawSize, rottenColor, rottenColorTwo);
                 default:
                     return base.GraphicFor(pawn);
