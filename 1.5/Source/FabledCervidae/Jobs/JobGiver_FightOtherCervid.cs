@@ -9,15 +9,16 @@ namespace FabledCervidae
     public class JobGiver_FightOtherCervid : ThinkNode_JobGiver
     {
         private ModExtension_TerritorialFighting _modExt;
+        private float _fightChance;
         
         protected override Job TryGiveJob(Pawn pawn)
         {
             _modExt = pawn.def.GetModExtension<ModExtension_TerritorialFighting>();
             
             if (_modExt == null) return null;
-            float fightChance = _modExt.fightChance > 0f ? _modExt.fightChance : 1f;
+            _fightChance = _modExt.fightChance > 0f ? _modExt.fightChance : 1f;
             
-            if (!Rand.Chance(fightChance)) return null;
+            if (!Rand.Chance(_fightChance)) return null;
             if (pawn.ageTracker.CurLifeStage != FCDefOf.AnimalAdult 
                 || pawn.gender != Gender.Male || pawn.DeadOrDowned
                 || pawn.Faction == Faction.OfPlayer) return null;

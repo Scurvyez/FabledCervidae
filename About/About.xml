@@ -37,6 +37,7 @@ Features:
 - Some species have random antler pairings for more variation in the male sex.
 - Some species gain movement boosts during certain weather anomalies as well.
 - Members of the same species will also fight each other over territorial disputes from time to time.
+- Each species has corresponding genes for immunizations and skin color.
     </description>
 
     <loadAfter>

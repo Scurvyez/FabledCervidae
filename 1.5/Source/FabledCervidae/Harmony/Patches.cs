@@ -103,8 +103,11 @@ namespace FabledCervidae
         
         private static void SpecialDisplayStats_Postfix(ThingDef __instance, ref IEnumerable<StatDrawEntry> __result)
         {
-            if (!__instance.HasComp(typeof(Comp_DiseaseImmunity)) || __instance.IsCorpse) return;
-            CompProperties_DiseaseImmunity compProps = __instance.GetCompProperties<CompProperties_DiseaseImmunity>();
+            if (!__instance.HasComp(typeof(Comp_DiseaseImmunity)) 
+                || __instance.IsCorpse) return;
+            
+            CompProperties_DiseaseImmunity compProps 
+                = __instance.GetCompProperties<CompProperties_DiseaseImmunity>();
             
             if (compProps == null) return;
             if (compProps.ownImmunities.NullOrEmpty()) return;
@@ -129,15 +132,19 @@ namespace FabledCervidae
         
         public static bool WildAnimalSpawnerCommonalityOfAnimalNow_Prefix(PawnKindDef def, ref float __result)
         {
-            if (FCMod.Settings.animalToggle == null ||
-                !FCMod.Settings.animalToggle.TryGetValue(def.defName, out bool value)) return true;
+            if (FCMod.Settings.animalToggle == null 
+                || !FCMod.Settings.animalToggle.TryGetValue(
+                    def.defName, out bool value)) 
+                return true;
+            
             if (!value) return true;
             __result = 0f;
             
             return false;
         }
         
-        public static void MakeRecipeProducts_Postfix(ref IEnumerable<Thing> __result, Thing dominantIngredient)
+        public static void MakeRecipeProducts_Postfix(ref IEnumerable<Thing> __result, 
+            Thing dominantIngredient)
         {
             List<Thing> newResult = __result.ToList();
 
@@ -149,7 +156,8 @@ namespace FabledCervidae
                 innerPawn.gender == Gender.Male &&
                 raceProps?.body == FCDefOf.FC_QuadrupedAnimalWithHoovesAndAntlers)
             {
-                ModExtension_ButcherDrops ext = innerPawn.def?.GetModExtension<ModExtension_ButcherDrops>();
+                ModExtension_ButcherDrops ext 
+                    = innerPawn.def?.GetModExtension<ModExtension_ButcherDrops>();
                 
                 if (ext == null || !Rand.Chance(ext.dropChance)) return;
                 Thing antler = ThingMaker.MakeThing(ext.adultAntler);
@@ -162,27 +170,34 @@ namespace FabledCervidae
         
         private static void RelationsTrackerTick_Postfix(Pawn ___pawn)
         {
-            if (!ModsConfig.BiotechActive || !___pawn.IsHashIntervalTick(2500)) return;
+            if (!ModsConfig.BiotechActive 
+                || !___pawn.IsHashIntervalTick(2500)) return;
 
-            if (___pawn.RaceProps?.body != FCDefOf.FC_QuadrupedAnimalWithHoovesAndAntlers) return;
+            if (___pawn.RaceProps?.body 
+                != FCDefOf.FC_QuadrupedAnimalWithHoovesAndAntlers) return;
             Pawn masterColonist = ___pawn.playerSettings?.Master;
             bool hasBondedMaster = PatchesHelper.HasBondedColonist(___pawn);
             
             if (masterColonist == null || !hasBondedMaster) return;
-            if (PatchesHelper.CervidVitalityGenes.Any(gene => masterColonist.genes.HasActiveGene(gene))) return;
+            if (PatchesHelper.CervidVitalityGenes.Any(gene 
+                    => masterColonist.genes.HasActiveGene(gene))) return;
             
             GeneDef geneToAdd = ___pawn.def switch
             {
-                _ when ___pawn.def == FCDefOf.FC_Scire => FCDefOf.FC_Immunities_Scire,
-                _ when ___pawn.def == FCDefOf.FC_Mirelung => FCDefOf.FC_Immunities_Mirelung,
-                _ when ___pawn.def == FCDefOf.FC_Infernihart => FCDefOf.FC_Immunities_Infernihart,
-                _ when ___pawn.def == FCDefOf.FC_Auravine => FCDefOf.FC_Immunities_Auravine,
-                _ => null
+                _ when ___pawn.def == FCDefOf.FC_Scire 
+                    => FCDefOf.FC_Immunities_Scire,
+                _ when ___pawn.def == FCDefOf.FC_Mirelung 
+                    => FCDefOf.FC_Immunities_Mirelung,
+                _ when ___pawn.def == FCDefOf.FC_Infernihart
+                    => FCDefOf.FC_Immunities_Infernihart,
+                _ when ___pawn.def == FCDefOf.FC_Auravine 
+                    => FCDefOf.FC_Immunities_Auravine,
+                _ 
+                    => null
             };
             
             if (geneToAdd == null) return;
-            masterColonist.genes.AddGene(geneToAdd, false);
-            FCLog.Message($"{geneToAdd.LabelCap} added to {masterColonist.NameFullColored}");
+            masterColonist.genes.AddGene(geneToAdd, true);
         }
         
         private static void GeneTrackerTick_Postfix(Pawn ___pawn)
@@ -192,13 +207,14 @@ namespace FabledCervidae
             List<Gene> ownGenes = ___pawn.genes?.GenesListForReading;
             
             bool hasTargetBodyType = relations?.Any(relation => 
-                relation.otherPawn.RaceProps.body == FCDefOf.FC_QuadrupedAnimalWithHoovesAndAntlers) ?? false;
+                relation.otherPawn.RaceProps.body 
+                == FCDefOf.FC_QuadrupedAnimalWithHoovesAndAntlers) ?? false;
 
             if (hasTargetBodyType || ownGenes == null) return;
-            foreach (Gene gene in ownGenes.Where(g => PatchesHelper.CervidVitalityGenes.Contains(g.def)).ToList())
+            foreach (Gene gene in ownGenes.Where(g 
+                         => PatchesHelper.CervidVitalityGenes.Contains(g.def)).ToList())
             {
                 ___pawn.genes.RemoveGene(gene);
-                FCLog.Message($"{gene.def.LabelCap} removed from {___pawn.NameFullColored}");
             }
         }
     }

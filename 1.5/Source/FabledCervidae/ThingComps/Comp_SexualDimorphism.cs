@@ -7,8 +7,8 @@ namespace FabledCervidae
     {
         public CompProperties_SexualDimorphism Props => (CompProperties_SexualDimorphism) props;
         
-        public Color newColor;
-        public Color newColorTwo;
+        public Color NewColor;
+        public Color NewColorTwo;
         private readonly float _alpha = 1f;
 
         public override void PostSpawnSetup(bool respawningAfterLoad)
@@ -19,29 +19,29 @@ namespace FabledCervidae
             switch (pawn.gender)
             {
                 case Gender.Male:
-                    newColor = new Color(
+                    NewColor = new Color(
                         Props.maleRRangeOne.RandomInRange, 
                         Props.maleGRangeOne.RandomInRange, 
                         Props.maleBRangeOne.RandomInRange, _alpha);
-                    newColorTwo = new Color(
+                    NewColorTwo = new Color(
                         Props.maleRRangeTwo.RandomInRange, 
                         Props.maleGRangeTwo.RandomInRange, 
                         Props.maleBRangeTwo.RandomInRange, _alpha);
                     break;
                 case Gender.Female:
-                    newColor = new Color(
+                    NewColor = new Color(
                         Props.femaleRRangeOne.RandomInRange, 
                         Props.femaleGRangeOne.RandomInRange, 
                         Props.femaleBRangeOne.RandomInRange, _alpha);
-                    newColorTwo = new Color(
+                    NewColorTwo = new Color(
                         Props.femaleRRangeTwo.RandomInRange, 
                         Props.femaleGRangeTwo.RandomInRange, 
                         Props.femaleBRangeTwo.RandomInRange, _alpha);
                     break;
                 case Gender.None:
                 default:
-                    newColor = Color.white;
-                    newColorTwo = Color.white;
+                    NewColor = Color.white;
+                    NewColorTwo = Color.white;
                     break;
             }
             pawn.Drawer.renderer.SetAllGraphicsDirty();
@@ -50,8 +50,8 @@ namespace FabledCervidae
         public override void PostExposeData()
         {
             base.PostExposeData();
-            Scribe_Values.Look(ref newColor, "newColor");
-            Scribe_Values.Look(ref newColorTwo, "newColorTwo");
+            Scribe_Values.Look(ref NewColor, "NewColor");
+            Scribe_Values.Look(ref NewColorTwo, "NewColorTwo");
         }
     }
 }
