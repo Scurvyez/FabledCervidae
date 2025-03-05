@@ -108,7 +108,7 @@
                 </li>
                 <li>
                     <def>AnimalJuvenile</def>
-                    <minAge>3.5</minAge>
+                    <minAge>0.12</minAge>
                     <soundWounded>Pawn_Deer_Wounded</soundWounded>
                     <soundDeath>Pawn_Deer_Death</soundDeath>
                     <soundCall>Pawn_Deer_Call</soundCall>
@@ -116,7 +116,7 @@
                 </li>
                 <li>
                     <def>AnimalAdult</def>
-                    <minAge>5.7</minAge>
+                    <minAge>0.41</minAge>
                     <soundWounded>Pawn_Deer_Wounded</soundWounded>
                     <soundDeath>Pawn_Deer_Death</soundDeath>
                     <soundCall>Pawn_Deer_Call</soundCall>
