@@ -19,9 +19,10 @@ namespace FabledCervidae
         public override void CompTick()
         {
             base.CompTick();
-            if (parent is not Pawn parentPawn) return;
+            if (parent is not Pawn parentPawn) 
+                return;
+            
             bool shouldDraw = ShouldDrawEyes(parentPawn);
-
             if (Props.shouldFadeInOut)
             {
                 _fadeProgress = shouldDraw switch
@@ -36,7 +37,7 @@ namespace FabledCervidae
             {
                 _fadeProgress = shouldDraw ? 1f : 0f;
             }
-
+            
             _shouldDrawEyes = shouldDraw || _fadeProgress > 0f;
             if (_shouldDrawEyes)
             {
@@ -46,12 +47,15 @@ namespace FabledCervidae
 
         private bool ShouldDrawEyes(Pawn pawn)
         {
-            if (!pawn.Awake() 
+            if (!pawn.Spawned && !pawn.DeadOrDowned
+                && !pawn.Awake() 
                 && !Props.drawWhileSleeping 
                 && pawn.GetPosture() != PawnPosture.Standing) 
                 return false;
             
-            if (!Props.drawAtNight) return true;
+            if (!Props.drawAtNight) 
+                return true;
+            
             float currentSunGlow = GenCelestial.CurCelestialSunGlow(pawn.Map);
             return !(currentSunGlow > Props.sunlightThreshold);
         }
