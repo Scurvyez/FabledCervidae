@@ -46,8 +46,8 @@ namespace FabledCervidae
             harmony.Patch(original: AccessTools.Method(typeof(ThingDef), "SpecialDisplayStats"), 
                  postfix: new HarmonyMethod(typeof(Patches), nameof(SpecialDisplayStats_Postfix)));
             
-            harmony.Patch(original: AccessTools.Method(typeof(WildAnimalSpawner), "CommonalityOfAnimalNow"),
-                prefix: new HarmonyMethod(typeof(Patches), nameof(WildAnimalSpawnerCommonalityOfAnimalNow_Prefix)));
+            harmony.Patch(original: AccessTools.Method(typeof(BiomeDef), "CommonalityOfAnimal"),
+                postfix: new HarmonyMethod(typeof(Patches), nameof(BiomeDefCommonalityOfAnimal_Postfix)));
 
             harmony.Patch(original: AccessTools.Method(typeof(GenRecipe), "MakeRecipeProducts"),
                 postfix: new HarmonyMethod(typeof(Patches), nameof(MakeRecipeProducts_Postfix)));
@@ -130,29 +130,29 @@ namespace FabledCervidae
             ));
         }
         
-        public static bool WildAnimalSpawnerCommonalityOfAnimalNow_Prefix(PawnKindDef def, ref float __result)
+        public static void BiomeDefCommonalityOfAnimal_Postfix(PawnKindDef animalDef, ref float __result)
         {
-            if (FCMod.Settings.animalToggle == null 
-                || !FCMod.Settings.animalToggle.TryGetValue(
-                    def.defName, out bool value)) 
-                return true;
+            if (FCMod.Settings.animalToggle == null
+                || !FCMod.Settings.animalToggle
+                    .TryGetValue(animalDef.defName, out bool toggle))
+                return;
             
-            if (!value) return true;
-            __result = 0f;
-            
-            return false;
+            if (toggle)
+            {
+                __result = 0f;
+            }
         }
         
         public static void MakeRecipeProducts_Postfix(ref IEnumerable<Thing> __result, 
             Thing dominantIngredient)
-        {
-            List<Thing> newResult = __result.ToList();
-
+        { 
             if (dominantIngredient is not Corpse corpse) return;
+            
+            List<Thing> newResult = __result.ToList();
             Pawn innerPawn = corpse.InnerPawn;
             RaceProperties raceProps = innerPawn.def?.race;
             
-            if (innerPawn.ageTracker.CurLifeStage == FCDefOf.AnimalAdult && 
+            if (innerPawn.ageTracker?.CurLifeStage == FCDefOf.AnimalAdult && 
                 innerPawn.gender == Gender.Male &&
                 raceProps?.body == FCDefOf.FC_QuadrupedAnimalWithHoovesAndAntlers)
             {
