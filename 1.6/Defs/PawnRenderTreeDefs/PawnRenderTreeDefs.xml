@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <PawnRenderTreeDef>
+    <defName>FC_Animal_FabledCervidae</defName>
+    <root Class="PawnRenderNodeProperties_Parent">
+      <debugLabel>Root</debugLabel>
+      <tagDef>Root</tagDef>
+      <children>
+        <li>
+          <debugLabel>Body</debugLabel>
+          <tagDef>Body</tagDef>
+          <useRottenColor>true</useRottenColor>
+          <nodeClass>FabledCervidae.PawnRenderNode_Animal_SexualDimorphism</nodeClass>
+        </li>
+        <li>
+          <debugLabel>Antlers</debugLabel>
+          <tagDef>Head</tagDef>
+          <useRottenColor>false</useRottenColor>
+          <nodeClass>FabledCervidae.PawnRenderNode_Animal_MaleAntlers</nodeClass>
+        </li>
+      </children>
+    </root>
+  </PawnRenderTreeDef>
+
+</Defs>

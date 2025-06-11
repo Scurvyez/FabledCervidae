@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <JobDef>
+        <defName>FC_AttackTerritorial</defName>
+        <driverClass>FabledCervidae.JobDriver_AttackTerritorial</driverClass>
+        <reportString>in territorial dispute with TargetA.</reportString>
+        <alwaysShowWeapon>true</alwaysShowWeapon>
+        <casualInterruptible>false</casualInterruptible>
+        <collideWithPawns>true</collideWithPawns>
+        <checkOverrideOnDamage>OnlyIfInstigatorNotJobTarget</checkOverrideOnDamage>
+    </JobDef>
+
+</Defs>

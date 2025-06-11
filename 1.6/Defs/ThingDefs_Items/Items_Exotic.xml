@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+    <ThingDef ParentName="ResourceVerbBase">
+        <defName>FC_ScireAntler</defName>
+        <label>scire antler</label>
+        <description>A scire's antler. It's multifaceted dagger-like structure is perfect for inducing maximum damage.</description>
+        <equippedAngleOffset>-20</equippedAngleOffset>
+        <resourceReadoutPriority>Middle</resourceReadoutPriority>
+        <stackLimit>5</stackLimit>
+        <thingCategories>
+            <li>ItemsMisc</li>
+        </thingCategories>
+        <tradeTags>
+            <li>ExoticMisc</li>
+        </tradeTags>
+        <thingSetMakerTags>
+            <li>AnimalPart</li>
+        </thingSetMakerTags>
+        <weaponClasses>
+            <li>Melee</li>
+            <li>MeleePiercer</li>
+        </weaponClasses>
+        <graphicData>
+            <texPath>FabledCervidae/Things/Item/Special/ScireAntler</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>(2, 2)</drawSize>
+        </graphicData>
+        <statBases>
+            <MarketValue>115</MarketValue>
+            <MaxHitPoints>95</MaxHitPoints>
+            <Mass>5</Mass>
+            <Flammability>0.4</Flammability>
+            <DeteriorationRate>0.4</DeteriorationRate>
+        </statBases>
+        <tools>
+            <li>
+                <label>point</label>
+                <capacities>
+                    <li>Scratch</li>
+                    <li>Stab</li>
+                </capacities>
+                <power>28</power>
+                <cooldownTime>2.6</cooldownTime>
+            </li>
+            <li>
+                <label>base</label>
+                <capacities>
+                    <li>Blunt</li>
+                </capacities>
+                <power>9</power>
+                <cooldownTime>2</cooldownTime>
+            </li>
+        </tools>
+    </ThingDef>
+
+    <ThingDef ParentName="ResourceVerbBase">
+        <defName>FC_MirelungAntler</defName>
+        <label>mirelung antler</label>
+        <description>A mirelung's antler. It's dagger-tipped, plate-like shape makes it a perfect blunt weapon encased in spiky appendages. Though it hits hard it is extremely slow to swing.</description>
+        <equippedAngleOffset>-20</equippedAngleOffset>
+        <resourceReadoutPriority>Middle</resourceReadoutPriority>
+        <stackLimit>5</stackLimit>
+        <thingCategories>
+            <li>ItemsMisc</li>
+        </thingCategories>
+        <tradeTags>
+            <li>ExoticMisc</li>
+        </tradeTags>
+        <thingSetMakerTags>
+            <li>AnimalPart</li>
+        </thingSetMakerTags>
+        <weaponClasses>
+            <li>Melee</li>
+            <li>MeleePiercer</li>
+        </weaponClasses>
+        <graphicData>
+            <texPath>FabledCervidae/Things/Item/Special/MirelungAntler</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>(2, 2)</drawSize>
+        </graphicData>
+        <statBases>
+            <MarketValue>125</MarketValue>
+            <MaxHitPoints>95</MaxHitPoints>
+            <Mass>5</Mass>
+            <Flammability>0.3</Flammability>
+            <DeteriorationRate>0.4</DeteriorationRate>
+        </statBases>
+        <tools>
+            <li>
+                <label>point</label>
+                <capacities>
+                    <li>Scratch</li>
+                    <li>Stab</li>
+                </capacities>
+                <power>19</power>
+                <cooldownTime>5.2</cooldownTime>
+            </li>
+            <li>
+                <label>base</label>
+                <capacities>
+                    <li>Blunt</li>
+                </capacities>
+                <power>19</power>
+                <cooldownTime>5.2</cooldownTime>
+            </li>
+        </tools>
+    </ThingDef>
+
+    <ThingDef ParentName="ResourceVerbBase">
+        <defName>FC_InfernihartAntler</defName>
+        <label>infernihart antler</label>
+        <description>An infernihart's antler. It's armored appearance lends credit to its blunt damage potential. While it hits incredibly hard it is slow to use.</description>
+        <equippedAngleOffset>-20</equippedAngleOffset>
+        <resourceReadoutPriority>Middle</resourceReadoutPriority>
+        <stackLimit>5</stackLimit>
+        <thingCategories>
+            <li>ItemsMisc</li>
+        </thingCategories>
+        <tradeTags>
+            <li>ExoticMisc</li>
+        </tradeTags>
+        <thingSetMakerTags>
+            <li>AnimalPart</li>
+        </thingSetMakerTags>
+        <weaponClasses>
+            <li>Melee</li>
+            <li>MeleePiercer</li>
+        </weaponClasses>
+        <graphicData>
+            <texPath>FabledCervidae/Things/Item/Special/InfernihartAntler</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>(2, 2)</drawSize>
+        </graphicData>
+        <statBases>
+            <MarketValue>125</MarketValue>
+            <MaxHitPoints>105</MaxHitPoints>
+            <Mass>5</Mass>
+            <Flammability>0.1</Flammability>
+            <DeteriorationRate>0.4</DeteriorationRate>
+        </statBases>
+        <tools>
+            <li>
+                <label>point</label>
+                <capacities>
+                    <li>Scratch</li>
+                    <li>Blunt</li>
+                </capacities>
+                <power>29</power>
+                <cooldownTime>6</cooldownTime>
+            </li>
+            <li>
+                <label>base</label>
+                <capacities>
+                    <li>Blunt</li>
+                </capacities>
+                <power>15</power>
+                <cooldownTime>5</cooldownTime>
+            </li>
+        </tools>
+    </ThingDef>
+
+    <ThingDef ParentName="ResourceVerbBase">
+        <defName>FC_AuravineAntler</defName>
+        <label>auravine antler</label>
+        <description>An auravine's antler. Covered in dazzling hues of blue, green, and purple, its towering structure offer enhanced durability while still acting as a more than adequate slicing tool around the edges.</description>
+        <equippedAngleOffset>-20</equippedAngleOffset>
+        <resourceReadoutPriority>Middle</resourceReadoutPriority>
+        <stackLimit>5</stackLimit>
+        <thingCategories>
+            <li>ItemsMisc</li>
+        </thingCategories>
+        <tradeTags>
+            <li>ExoticMisc</li>
+        </tradeTags>
+        <thingSetMakerTags>
+            <li>AnimalPart</li>
+        </thingSetMakerTags>
+        <weaponClasses>
+            <li>Melee</li>
+            <li>MeleePiercer</li>
+        </weaponClasses>
+        <graphicData>
+            <texPath>FabledCervidae/Things/Item/Special/AuravineAntler</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>(2, 2)</drawSize>
+        </graphicData>
+        <statBases>
+            <MarketValue>150</MarketValue>
+            <MaxHitPoints>120</MaxHitPoints>
+            <Mass>6</Mass>
+            <Flammability>0.3</Flammability>
+            <DeteriorationRate>0.2</DeteriorationRate>
+        </statBases>
+        <tools>
+            <li>
+                <label>edge</label>
+                <capacities>
+                    <li>Scratch</li>
+                    <li>Cut</li>
+                </capacities>
+                <power>19</power>
+                <cooldownTime>5</cooldownTime>
+            </li>
+            <li>
+                <label>base</label>
+                <capacities>
+                    <li>Blunt</li>
+                </capacities>
+                <power>9</power>
+                <cooldownTime>2</cooldownTime>
+            </li>
+        </tools>
+    </ThingDef>
+
+</Defs>

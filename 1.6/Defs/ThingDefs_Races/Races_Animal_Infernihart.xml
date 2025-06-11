@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+    <FabledCervidae.ThingDefCervid ParentName="AnimalThingBase">
+        <defName>FC_Infernihart</defName>
+        <label>infernihart</label>
+        <description>Inferniharts are cervids and closely resemble several terrestrial species with similar move speed, minus the protective armor on their backs. They can be found in hotter and dryer climates.\n\nIn addition to sporting coats of red and green fur, these creatures possess bundles of tightly packed specialized healing cells which combat the effects of heatstroke and rapidly heal burn wounds.</description>
+        <statBases>
+            <MoveSpeed>5.5</MoveSpeed>
+            <ComfyTemperatureMin>-10</ComfyTemperatureMin>
+            <MarketValue>350</MarketValue>
+            <Wildness>0.75</Wildness>
+        </statBases>
+        <tradeTags>
+            <li>AnimalExotic</li>
+        </tradeTags>
+        <tools>
+            <li>
+                <label>left hoof</label>
+                <capacities>
+                    <li>Blunt</li>
+                    <li>Poke</li>
+                </capacities>
+                <power>8</power>
+                <cooldownTime>2</cooldownTime>
+                <linkedBodyPartsGroup>FrontLeftLeg</linkedBodyPartsGroup>
+            </li>
+            <li>
+                <label>right hoof</label>
+                <capacities>
+                    <li>Blunt</li>
+                    <li>Poke</li>
+                </capacities>
+                <power>8</power>
+                <cooldownTime>2</cooldownTime>
+                <linkedBodyPartsGroup>FrontRightLeg</linkedBodyPartsGroup>
+            </li>
+            <li>
+                <label>teeth</label>
+                <capacities>
+                    <li>Bite</li>
+                </capacities>
+                <power>8</power>
+                <cooldownTime>2</cooldownTime>
+                <linkedBodyPartsGroup>Teeth</linkedBodyPartsGroup>
+                <chanceFactor>0.3</chanceFactor>
+            </li>
+            <li>
+                <label>antlers</label>
+                <capacities>
+                    <li>Blunt</li>
+                </capacities>
+                <power>12</power>
+                <cooldownTime>6</cooldownTime>
+                <linkedBodyPartsGroup>FC_AntlerAttackTool</linkedBodyPartsGroup>
+                <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+                <chanceFactor>0.5</chanceFactor>
+            </li>
+        </tools>
+        <race>
+            <wildBiomes>
+                <Desert>0.6</Desert>
+                <TemperateForest>0.1</TemperateForest>
+                <AridShrubland>0.4</AridShrubland>
+                <ExtremeDesert>0.7</ExtremeDesert>
+                <AB_PyroclasticConflagration MayRequire="sarg.alphabiomes">0.3</AB_PyroclasticConflagration>
+                <AB_RockyCrags MayRequire="sarg.alphabiomes">0.2</AB_RockyCrags>
+                <AB_TarPits MayRequire="sarg.alphabiomes">0.4</AB_TarPits>
+                <ZBiome_CoastalDunes MayRequire="zylle.morevanillabiomes">0.1</ZBiome_CoastalDunes>
+                <ZBiome_Badlands MayRequire="zylle.morevanillabiomes">0.1</ZBiome_Badlands>
+                <ZBiome_DesertOasis MayRequire="zylle.morevanillabiomes">0.2</ZBiome_DesertOasis>
+                <ZBiome_Sandbar_NoBeach MayRequire="zylle.morevanillabiomes">0.1</ZBiome_Sandbar_NoBeach>
+                <RG_BoilingForest MayRequire="regrowth.botr.boilingforest">0.5</RG_BoilingForest>
+            </wildBiomes>
+            <renderTree>FC_Animal_FabledCervidae</renderTree>
+            <bloodDef>FC_Filth_InfernihartBlood</bloodDef>
+            <leatherDef>FC_Leather_Infernihart</leatherDef>
+            <body>FC_QuadrupedAnimalWithHoovesAndAntlers</body>
+            <foodType>VegetarianRoughAnimal</foodType>
+            <meatLabel>infernihart shank</meatLabel>
+            <herdAnimal>true</herdAnimal>
+            <trainability>Advanced</trainability>
+            <nameOnTameChance>1</nameOnTameChance>
+            <petness>0.2</petness>
+            <nuzzleMtbHours>15</nuzzleMtbHours>
+            <predator>false</predator>
+            <maxPreyBodySize>1.0</maxPreyBodySize>
+            <baseBodySize>1.0</baseBodySize>
+            <baseHungerRate>0.19</baseHungerRate>
+            <baseHealthScale>1.8</baseHealthScale>
+            <roamMtbDays>2</roamMtbDays>
+            <manhunterOnTameFailChance>0.15</manhunterOnTameFailChance>
+            <manhunterOnDamageChance>0.25</manhunterOnDamageChance>
+            <gestationPeriodDays>5.661</gestationPeriodDays>
+            <lifeExpectancy>15</lifeExpectancy>
+            <litterSizeCurve>
+                <points>
+                    <li>(0.5, 0)</li>
+                    <li>(1, 1)</li>
+                    <li>(3, 1)</li>
+                    <li>(3.5, 0)</li>
+                </points>
+            </litterSizeCurve>
+            <lifeStageAges Inherit="false">
+                <li>
+                    <def>AnimalBaby</def>
+                    <minAge>0.0</minAge>
+                </li>
+                <li>
+                    <def>AnimalJuvenile</def>
+                    <minAge>0.12</minAge>
+                    <soundWounded>Pawn_Deer_Wounded</soundWounded>
+                    <soundDeath>Pawn_Deer_Death</soundDeath>
+                    <soundCall>Pawn_Deer_Call</soundCall>
+                    <soundAngry>Pawn_Deer_Angry</soundAngry>
+                </li>
+                <li>
+                    <def>AnimalAdult</def>
+                    <minAge>0.41</minAge>
+                    <soundWounded>Pawn_Deer_Wounded</soundWounded>
+                    <soundDeath>Pawn_Deer_Death</soundDeath>
+                    <soundCall>Pawn_Deer_Call</soundCall>
+                    <soundAngry>Pawn_Deer_Angry</soundAngry>
+                </li>
+            </lifeStageAges>
+            <soundMeleeHitPawn>Pawn_Melee_BigBash_HitPawn</soundMeleeHitPawn>
+            <soundMeleeHitBuilding>Pawn_Melee_BigBash_HitBuilding</soundMeleeHitBuilding>
+            <soundMeleeMiss>Pawn_Melee_BigBash_Miss</soundMeleeMiss>
+        </race>
+        <comps>
+            <li Class="FabledCervidae.CompProperties_DiseaseImmunity">
+                <ownImmunities>
+                    <li>Heatstroke</li>
+                    <li>Burn</li>
+                </ownImmunities>
+                <tickInterval>2500</tickInterval>
+            </li>
+            <li Class="FabledCervidae.CompProperties_SexualDimorphism">
+                <maleRRangeOne>1 ~ 1</maleRRangeOne>
+                <maleGRangeOne>0.4 ~ 0.6</maleGRangeOne>
+                <maleBRangeOne>0.1 ~ 0.2</maleBRangeOne>
+
+                <femaleRRangeOne>1 ~ 1</femaleRRangeOne>
+                <femaleGRangeOne>0.3 ~ 0.4</femaleGRangeOne>
+                <femaleBRangeOne>0 ~ 0.2</femaleBRangeOne>
+            </li>
+            <li Class="FabledCervidae.CompProperties_MaleAntlers">
+                <adultAntlerVariantCount>1</adultAntlerVariantCount>
+                <juvenileAntlerVariantCount>1</juvenileAntlerVariantCount>
+            </li>
+            <li Class="FabledCervidae.CompProperties_GlowingEyes">
+                <eyeGraphicMale>FabledCervidae/Things/Pawn/Animal/Infernihart/InfernihartMaleGlowingEyesAdult</eyeGraphicMale>
+                <eyeGraphicFemale>FabledCervidae/Things/Pawn/Animal/Infernihart/InfernihartFemaleGlowingEyesAdult</eyeGraphicFemale>
+                <eyeColor>(1, 0.5, 0.2)</eyeColor>
+                <shouldFadeInOut>true</shouldFadeInOut>
+                <drawWhileSleeping>false</drawWhileSleeping>
+                <drawAtNight>true</drawAtNight>
+                <sunlightThreshold>0.3</sunlightThreshold>
+            </li>
+        </comps>
+        <modExtensions>
+            <li Class="FabledCervidae.ModExtension_GameConditionStatOffsets">
+                <pairs>
+                    <li>
+                        <moveSpeedFactor>1.8</moveSpeedFactor>
+                        <gameCondition>HeatWave</gameCondition>
+                    </li>
+                </pairs>
+            </li>
+            <li Class="FabledCervidae.ModExtension_TerritorialFighting">
+                <targetAcquireRadius>20</targetAcquireRadius>
+                <disputeDuration>600</disputeDuration>
+                <fightChance>0.12</fightChance>
+            </li>
+            <li Class="FabledCervidae.ModExtension_ButcherDrops">
+                <adultAntler>FC_InfernihartAntler</adultAntler>
+                <dropChance>0.5</dropChance>
+                <extraDropChance>0.2</extraDropChance>
+            </li>
+        </modExtensions>
+    </FabledCervidae.ThingDefCervid>
+
+    <PawnKindDef ParentName="AnimalKindBase">
+        <defName>FC_Infernihart</defName>
+        <label>infernihart</label>
+        <labelPlural>infernihart</labelPlural>
+        <labelMale>infernihart stag</labelMale>
+        <labelFemale>infernihart hind</labelFemale>
+        <race>FC_Infernihart</race>
+        <combatPower>270</combatPower>
+        <ecoSystemWeight>0.25</ecoSystemWeight>
+        <wildGroupSize>
+            <min>1</min>
+            <max>7</max>
+        </wildGroupSize>
+        <lifeStages>
+            <li>
+                <bodyGraphicData>
+                    <texPath>FabledCervidae/Things/Pawn/Animal/Infernihart/InfernihartMale</texPath>
+                    <drawSize>1.8</drawSize>
+                    <shaderType>CutoutComplex</shaderType>
+                    <drawOffsetNorth>(0, 0, 0.3)</drawOffsetNorth>
+                    <drawOffsetEast>(0, 0, 0.2)</drawOffsetEast>
+                    <drawOffsetSouth>(0, 0, 0.25)</drawOffsetSouth>
+                    <drawOffsetWest>(0, 0, 0.2)</drawOffsetWest>
+                    <shadowData>
+                        <volume>(0.7, 0.7, 0.7)</volume>
+                        <offset>(0,0,-0.7)</offset>
+                    </shadowData>
+                </bodyGraphicData>
+                <femaleGraphicData>
+                    <texPath>FabledCervidae/Things/Pawn/Animal/Infernihart/InfernihartFemale</texPath>
+                    <drawSize>1.25</drawSize>
+                    <shaderType>CutoutComplex</shaderType>
+                    <drawOffsetNorth>(0, 0, 0.3)</drawOffsetNorth>
+                    <drawOffsetEast>(0, 0, 0.2)</drawOffsetEast>
+                    <drawOffsetSouth>(0, 0, 0.25)</drawOffsetSouth>
+                    <drawOffsetWest>(0, 0, 0.2)</drawOffsetWest>
+                    <shadowData>
+                        <volume>(0.5, 0.5, 0.5)</volume>
+                        <offset>(0,-2,0)</offset>
+                    </shadowData>
+                </femaleGraphicData>
+                <dessicatedBodyGraphicData>
+                    <texPath>FabledCervidae/Things/Pawn/Animal/Infernihart/Dessicated_InfernihartMale</texPath>
+                    <drawSize>2</drawSize>
+                </dessicatedBodyGraphicData>
+                <femaleDessicatedBodyGraphicData>
+                    <texPath>FabledCervidae/Things/Pawn/Animal/Infernihart/Dessicated_InfernihartFemale</texPath>
+                    <drawSize>1.5</drawSize>
+                </femaleDessicatedBodyGraphicData>
+            </li>
+            <li>
+                <bodyGraphicData>
+                    <texPath>FabledCervidae/Things/Pawn/Animal/Infernihart/InfernihartMale</texPath>
+                    <drawSize>2.75</drawSize>
+                    <shaderType>CutoutComplex</shaderType>
+                    <drawOffsetNorth>(0, 0, 0.5)</drawOffsetNorth>
+                    <drawOffsetEast>(0, 0, 0.55)</drawOffsetEast>
+                    <drawOffsetSouth>(0, 0, 0.26)</drawOffsetSouth>
+                    <drawOffsetWest>(0, 0, 0.55)</drawOffsetWest>
+                    <shadowData>
+                        <volume>(0.7, 0.7, 0.7)</volume>
+                        <offset>(0,0,-0.7)</offset>
+                    </shadowData>
+                </bodyGraphicData>
+                <femaleGraphicData>
+                    <texPath>FabledCervidae/Things/Pawn/Animal/Infernihart/InfernihartFemale</texPath>
+                    <drawSize>1.75</drawSize>
+                    <shaderType>CutoutComplex</shaderType>
+                    <drawOffsetNorth>(0, 0, 0.5)</drawOffsetNorth>
+                    <drawOffsetEast>(0, 0, 0.55)</drawOffsetEast>
+                    <drawOffsetSouth>(0, 0, 0.22)</drawOffsetSouth>
+                    <drawOffsetWest>(0, 0, 0.55)</drawOffsetWest>
+                    <shadowData>
+                        <volume>(0.5, 0.5, 0.5)</volume>
+                        <offset>(0,-2,0)</offset>
+                    </shadowData>
+                </femaleGraphicData>
+                <dessicatedBodyGraphicData>
+                    <texPath>FabledCervidae/Things/Pawn/Animal/Infernihart/Dessicated_InfernihartMale</texPath>
+                    <drawSize>2.75</drawSize>
+                </dessicatedBodyGraphicData>
+                <femaleDessicatedBodyGraphicData>
+                    <texPath>FabledCervidae/Things/Pawn/Animal/Infernihart/Dessicated_InfernihartFemale</texPath>
+                    <drawSize>1.75</drawSize>
+                </femaleDessicatedBodyGraphicData>
+            </li>
+            <li>
+                <bodyGraphicData>
+                    <texPath>FabledCervidae/Things/Pawn/Animal/Infernihart/InfernihartMale</texPath>
+                    <drawSize>3.5</drawSize>
+                    <shaderType>CutoutComplex</shaderType>
+                    <drawOffsetNorth>(0, 0, 0.5)</drawOffsetNorth>
+                    <drawOffsetEast>(0, 0, 0.8)</drawOffsetEast>
+                    <drawOffsetSouth>(0, 0, 0.45)</drawOffsetSouth>
+                    <drawOffsetWest>(0, 0, 0.8)</drawOffsetWest>
+                    <shadowData>
+                        <volume>(0.7, 0.7, 0.7)</volume>
+                        <offset>(0,0,-0.7)</offset>
+                    </shadowData>
+                </bodyGraphicData>
+                <femaleGraphicData>
+                    <texPath>FabledCervidae/Things/Pawn/Animal/Infernihart/InfernihartFemale</texPath>
+                    <drawSize>2.5</drawSize>
+                    <shaderType>CutoutComplex</shaderType>
+                    <drawOffsetNorth>(0, 0, 0.5)</drawOffsetNorth>
+                    <drawOffsetEast>(0, 0, 0.45)</drawOffsetEast>
+                    <drawOffsetSouth>(0, 0, 0.45)</drawOffsetSouth>
+                    <drawOffsetWest>(0, 0, 0.45)</drawOffsetWest>
+                    <shadowData>
+                        <volume>(0.5, 0.5, 0.5)</volume>
+                        <offset>(0,-2,0)</offset>
+                    </shadowData>
+                </femaleGraphicData>
+                <dessicatedBodyGraphicData>
+                    <texPath>FabledCervidae/Things/Pawn/Animal/Infernihart/Dessicated_InfernihartMale</texPath>
+                    <drawSize>3.5</drawSize>
+                </dessicatedBodyGraphicData>
+                <femaleDessicatedBodyGraphicData>
+                    <texPath>FabledCervidae/Things/Pawn/Animal/Infernihart/Dessicated_InfernihartFemale</texPath>
+                    <drawSize>2.5</drawSize>
+                </femaleDessicatedBodyGraphicData>
+            </li>
+        </lifeStages>
+    </PawnKindDef>
+
+</Defs>

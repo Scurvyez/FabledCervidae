@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+    <FabledCervidae.ThingDefCervid ParentName="AnimalThingBase">
+        <defName>FC_Mirelung</defName>
+        <label>mirelung</label>
+        <description>This bog-dwelling creature loves the humidity of swampy environments. It's one with the swamps and will defend its home with devout passion though it is slightly slower than terrestrial species.\n\nWhile not as aesthetically glorious as other cervid species, its leather can absorb a great deal of damage from blunt objects making it a sought-after animal for its hide.\n\nBecause of its strong symbiotic relationship with the ecosystem, it is immune to artificial irritants such as mechanites.</description>
+        <statBases>
+            <MoveSpeed>5.25</MoveSpeed>
+            <ComfyTemperatureMin>-15</ComfyTemperatureMin>
+            <MarketValue>350</MarketValue>
+            <Wildness>0.75</Wildness>
+        </statBases>
+        <tradeTags>
+            <li>AnimalExotic</li>
+        </tradeTags>
+        <tools>
+            <li>
+                <label>left hoof</label>
+                <capacities>
+                    <li>Blunt</li>
+                    <li>Poke</li>
+                </capacities>
+                <power>8</power>
+                <cooldownTime>2</cooldownTime>
+                <linkedBodyPartsGroup>FrontLeftLeg</linkedBodyPartsGroup>
+            </li>
+            <li>
+                <label>right hoof</label>
+                <capacities>
+                    <li>Blunt</li>
+                    <li>Poke</li>
+                </capacities>
+                <power>8</power>
+                <cooldownTime>2</cooldownTime>
+                <linkedBodyPartsGroup>FrontRightLeg</linkedBodyPartsGroup>
+            </li>
+            <li>
+                <label>teeth</label>
+                <capacities>
+                    <li>Bite</li>
+                </capacities>
+                <power>8</power>
+                <cooldownTime>2</cooldownTime>
+                <linkedBodyPartsGroup>Teeth</linkedBodyPartsGroup>
+                <chanceFactor>0.3</chanceFactor>
+            </li>
+            <li>
+                <label>antlers</label>
+                <capacities>
+                    <li>Blunt</li>
+                </capacities>
+                <power>10</power>
+                <cooldownTime>6</cooldownTime>
+                <linkedBodyPartsGroup>FC_AntlerAttackTool</linkedBodyPartsGroup>
+                <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+                <chanceFactor>0.5</chanceFactor>
+            </li>
+        </tools>
+        <race>
+            <wildBiomes>
+                <BorealForest>0.1</BorealForest>
+                <TemperateSwamp>0.6</TemperateSwamp>
+                <TemperateForest>0.3</TemperateForest>
+                <AB_FeraliskInfestedJungle MayRequire="sarg.alphabiomes">0.3</AB_FeraliskInfestedJungle>
+                <AB_MiasmicMangrove MayRequire="sarg.alphabiomes">0.4</AB_MiasmicMangrove>
+                <ZBiome_Marsh MayRequire="zylle.morevanillabiomes">0.5</ZBiome_Marsh>
+                <RG_AspenForest MayRequire="regrowth.botr.aspenforest">0.2</RG_AspenForest>
+            </wildBiomes>
+            <renderTree>FC_Animal_FabledCervidae</renderTree>
+            <bloodDef>FC_Filth_MirelungBlood</bloodDef>
+            <leatherDef>FC_Leather_Mirelung</leatherDef>
+            <body>FC_QuadrupedAnimalWithHoovesAndAntlers</body>
+            <foodType>VegetarianRoughAnimal</foodType>
+            <meatLabel>mirelung shank</meatLabel>
+            <herdAnimal>true</herdAnimal>
+            <trainability>Advanced</trainability>
+            <nameOnTameChance>1</nameOnTameChance>
+            <petness>0.2</petness>
+            <nuzzleMtbHours>15</nuzzleMtbHours>
+            <predator>false</predator>
+            <maxPreyBodySize>1.0</maxPreyBodySize>
+            <baseBodySize>1.0</baseBodySize>
+            <baseHungerRate>0.19</baseHungerRate>
+            <baseHealthScale>1.8</baseHealthScale>
+            <roamMtbDays>2</roamMtbDays>
+            <manhunterOnTameFailChance>0.05</manhunterOnTameFailChance>
+            <manhunterOnDamageChance>0.15</manhunterOnDamageChance>
+            <gestationPeriodDays>5.661</gestationPeriodDays>
+            <lifeExpectancy>15</lifeExpectancy>
+            <litterSizeCurve>
+                <points>
+                    <li>(0.5, 0)</li>
+                    <li>(1, 1)</li>
+                    <li>(3, 1)</li>
+                    <li>(3.5, 0)</li>
+                </points>
+            </litterSizeCurve>
+            <lifeStageAges Inherit="false">
+                <li>
+                    <def>AnimalBaby</def>
+                    <minAge>0.0</minAge>
+                </li>
+                <li>
+                    <def>AnimalJuvenile</def>
+                    <minAge>0.12</minAge>
+                    <soundWounded>Pawn_Deer_Wounded</soundWounded>
+                    <soundDeath>Pawn_Deer_Death</soundDeath>
+                    <soundCall>Pawn_Deer_Call</soundCall>
+                    <soundAngry>Pawn_Deer_Angry</soundAngry>
+                </li>
+                <li>
+                    <def>AnimalAdult</def>
+                    <minAge>0.41</minAge>
+                    <soundWounded>Pawn_Deer_Wounded</soundWounded>
+                    <soundDeath>Pawn_Deer_Death</soundDeath>
+                    <soundCall>Pawn_Deer_Call</soundCall>
+                    <soundAngry>Pawn_Deer_Angry</soundAngry>
+                </li>
+            </lifeStageAges>
+            <soundMeleeHitPawn>Pawn_Melee_BigBash_HitPawn</soundMeleeHitPawn>
+            <soundMeleeHitBuilding>Pawn_Melee_BigBash_HitBuilding</soundMeleeHitBuilding>
+            <soundMeleeMiss>Pawn_Melee_BigBash_Miss</soundMeleeMiss>
+        </race>
+        <comps>
+            <li Class="FabledCervidae.CompProperties_DiseaseImmunity">
+                <ownImmunities>
+                    <li>Animal_Plague</li>
+                    <li>GutWorms</li>
+                    <li>Malaria</li>
+                    <li>MuscleParasites</li>
+                    <li>FibrousMechanites</li>
+                    <li>SensoryMechanites</li>
+                </ownImmunities>
+                <tickInterval>2500</tickInterval>
+            </li>
+            <li Class="FabledCervidae.CompProperties_SexualDimorphism">
+                <maleRRangeOne>0.25 ~ 0.5</maleRRangeOne>
+                <maleGRangeOne>0.1 ~ 0.2</maleGRangeOne>
+                <maleBRangeOne>0 ~ 0</maleBRangeOne>
+
+                <femaleRRangeOne>0.1 ~ 0.4</femaleRRangeOne>
+                <femaleGRangeOne>0.1 ~ 0.2</femaleGRangeOne>
+                <femaleBRangeOne>0 ~ 0</femaleBRangeOne>
+            </li>
+            <li Class="FabledCervidae.CompProperties_MaleAntlers">
+                <adultAntlerVariantCount>1</adultAntlerVariantCount>
+                <juvenileAntlerVariantCount>1</juvenileAntlerVariantCount>
+            </li>
+        </comps>
+        <modExtensions>
+            <li Class="FabledCervidae.ModExtension_GameConditionStatOffsets">
+                <pairs>
+                    <li>
+                        <moveSpeedFactor>1.2</moveSpeedFactor>
+                        <gameCondition>HeatWave</gameCondition>
+                    </li>
+                    <li>
+                        <moveSpeedFactor>1.225</moveSpeedFactor>
+                        <gameCondition>Flashstorm</gameCondition>
+                    </li>
+                </pairs>
+            </li>
+            <li Class="FabledCervidae.ModExtension_TerritorialFighting">
+                <targetAcquireRadius>20</targetAcquireRadius>
+                <disputeDuration>600</disputeDuration>
+                <fightChance>0.11</fightChance>
+            </li>
+            <li Class="FabledCervidae.ModExtension_ButcherDrops">
+                <adultAntler>FC_MirelungAntler</adultAntler>
+                <dropChance>0.5</dropChance>
+                <extraDropChance>0.2</extraDropChance>
+            </li>
+        </modExtensions>
+    </FabledCervidae.ThingDefCervid>
+
+    <PawnKindDef ParentName="AnimalKindBase">
+        <defName>FC_Mirelung</defName>
+        <label>mirelung</label>
+        <labelPlural>mirelung</labelPlural>
+        <labelMale>mirelung stag</labelMale>
+        <labelFemale>mirelung hind</labelFemale>
+        <race>FC_Mirelung</race>
+        <combatPower>170</combatPower>
+        <ecoSystemWeight>0.25</ecoSystemWeight>
+        <wildGroupSize>
+            <min>1</min>
+            <max>7</max>
+        </wildGroupSize>
+        <lifeStages>
+            <li>
+                <bodyGraphicData>
+                    <texPath>FabledCervidae/Things/Pawn/Animal/Mirelung/MirelungMale</texPath>
+                    <drawSize>1.8</drawSize>
+                    <shaderType>CutoutComplex</shaderType>
+                    <drawOffsetNorth>(0, 0, 0.3)</drawOffsetNorth>
+                    <drawOffsetEast>(0, 0, 0.2)</drawOffsetEast>
+                    <drawOffsetSouth>(0, 0, 0.25)</drawOffsetSouth>
+                    <drawOffsetWest>(0, 0, 0.2)</drawOffsetWest>
+                    <shadowData>
+                        <volume>(0.7, 0.7, 0.7)</volume>
+                        <offset>(0,0,-0.7)</offset>
+                    </shadowData>
+                </bodyGraphicData>
+                <femaleGraphicData>
+                    <texPath>FabledCervidae/Things/Pawn/Animal/Mirelung/MirelungFemale</texPath>
+                    <drawSize>1.25</drawSize>
+                    <shaderType>CutoutComplex</shaderType>
+                    <drawOffsetNorth>(0, 0, 0.3)</drawOffsetNorth>
+                    <drawOffsetEast>(0, 0, 0.2)</drawOffsetEast>
+                    <drawOffsetSouth>(0, 0, 0.2)</drawOffsetSouth>
+                    <drawOffsetWest>(0, 0, 0.2)</drawOffsetWest>
+                    <shadowData>
+                        <volume>(0.5, 0.5, 0.5)</volume>
+                        <offset>(0,-2,0)</offset>
+                    </shadowData>
+                </femaleGraphicData>
+                <dessicatedBodyGraphicData>
+                    <texPath>FabledCervidae/Things/Pawn/Animal/Mirelung/Dessicated_MirelungMale</texPath>
+                    <drawSize>2</drawSize>
+                </dessicatedBodyGraphicData>
+                <femaleDessicatedBodyGraphicData>
+                    <texPath>FabledCervidae/Things/Pawn/Animal/Mirelung/Dessicated_MirelungFemale</texPath>
+                    <drawSize>1.5</drawSize>
+                </femaleDessicatedBodyGraphicData>
+            </li>
+            <li>
+                <bodyGraphicData>
+                    <texPath>FabledCervidae/Things/Pawn/Animal/Mirelung/MirelungMale</texPath>
+                    <drawSize>2.75</drawSize>
+                    <shaderType>CutoutComplex</shaderType>
+                    <drawOffsetNorth>(0, 0, 0.5)</drawOffsetNorth>
+                    <drawOffsetEast>(0, 0, 0.55)</drawOffsetEast>
+                    <drawOffsetSouth>(0, 0, 0.4)</drawOffsetSouth>
+                    <drawOffsetWest>(0, 0, 0.55)</drawOffsetWest>
+                    <shadowData>
+                        <volume>(0.7, 0.7, 0.7)</volume>
+                        <offset>(0,0,-0.7)</offset>
+                    </shadowData>
+                </bodyGraphicData>
+                <femaleGraphicData>
+                    <texPath>FabledCervidae/Things/Pawn/Animal/Mirelung/MirelungFemale</texPath>
+                    <drawSize>1.75</drawSize>
+                    <shaderType>CutoutComplex</shaderType>
+                    <drawOffsetNorth>(0, 0, 0.5)</drawOffsetNorth>
+                    <drawOffsetEast>(0, 0, 0.55)</drawOffsetEast>
+                    <drawOffsetSouth>(0, 0, 0.4)</drawOffsetSouth>
+                    <drawOffsetWest>(0, 0, 0.55)</drawOffsetWest>
+                    <shadowData>
+                        <volume>(0.5, 0.5, 0.5)</volume>
+                        <offset>(0,-2,0)</offset>
+                    </shadowData>
+                </femaleGraphicData>
+                <dessicatedBodyGraphicData>
+                    <texPath>FabledCervidae/Things/Pawn/Animal/Mirelung/Dessicated_MirelungMale</texPath>
+                    <drawSize>2.75</drawSize>
+                </dessicatedBodyGraphicData>
+                <femaleDessicatedBodyGraphicData>
+                    <texPath>FabledCervidae/Things/Pawn/Animal/Mirelung/Dessicated_MirelungFemale</texPath>
+                    <drawSize>1.75</drawSize>
+                </femaleDessicatedBodyGraphicData>
+            </li>
+            <li>
+                <bodyGraphicData>
+                    <texPath>FabledCervidae/Things/Pawn/Animal/Mirelung/MirelungMale</texPath>
+                    <drawSize>3.5</drawSize>
+                    <shaderType>CutoutComplex</shaderType>
+                    <drawOffsetNorth>(0, 0, 0.4)</drawOffsetNorth>
+                    <drawOffsetEast>(0, 0, 0.8)</drawOffsetEast>
+                    <drawOffsetSouth>(0, 0, 0.4)</drawOffsetSouth>
+                    <drawOffsetWest>(0, 0, 0.8)</drawOffsetWest>
+                    <shadowData>
+                        <volume>(0.7, 0.7, 0.7)</volume>
+                        <offset>(0,0,-0.7)</offset>
+                    </shadowData>
+                </bodyGraphicData>
+                <femaleGraphicData>
+                    <texPath>FabledCervidae/Things/Pawn/Animal/Mirelung/MirelungFemale</texPath>
+                    <drawSize>2.5</drawSize>
+                    <shaderType>CutoutComplex</shaderType>
+                    <drawOffsetNorth>(0, 0, 0.3)</drawOffsetNorth>
+                    <drawOffsetEast>(0, 0, 0.4)</drawOffsetEast>
+                    <drawOffsetSouth>(0, 0, 0.3)</drawOffsetSouth>
+                    <drawOffsetWest>(0, 0, 0.4)</drawOffsetWest>
+                    <shadowData>
+                        <volume>(0.5, 0.5, 0.5)</volume>
+                        <offset>(0,-2,0)</offset>
+                    </shadowData>
+                </femaleGraphicData>
+                <dessicatedBodyGraphicData>
+                    <texPath>FabledCervidae/Things/Pawn/Animal/Mirelung/Dessicated_MirelungMale</texPath>
+                    <drawSize>3.5</drawSize>
+                </dessicatedBodyGraphicData>
+                <femaleDessicatedBodyGraphicData>
+                    <texPath>FabledCervidae/Things/Pawn/Animal/Mirelung/Dessicated_MirelungFemale</texPath>
+                    <drawSize>2.5</drawSize>
+                </femaleDessicatedBodyGraphicData>
+            </li>
+        </lifeStages>
+    </PawnKindDef>
+
+</Defs>

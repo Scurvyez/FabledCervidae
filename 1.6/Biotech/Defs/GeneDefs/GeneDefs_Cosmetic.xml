@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+    <GeneDef>
+        <defName>FC_Immunities_Scire</defName>
+        <label>scire vitality transference</label>
+        <description>Carriers of this gene gain an immense natural resistance to the flu, hypothermia, and frostbite via a strong metaphysical bond with a colony scire.</description>
+        <iconPath>FabledCervidae/UI/Icons/Genes/Gene_ScireVitality</iconPath>
+        <randomChosen>false</randomChosen>
+        <displayOrderInCategory>50</displayOrderInCategory>
+        <selectionWeight>0</selectionWeight>
+        <biostatCpx>0</biostatCpx>
+        <makeImmuneTo>
+            <li>Flu</li>
+            <li>Hypothermia</li>
+            <li>Frostbite</li>
+        </makeImmuneTo>
+    </GeneDef>
+
+    <GeneDef>
+        <defName>FC_Immunities_Mirelung</defName>
+        <label>mirelung vitality transference</label>
+        <description>Carriers of this gene gain an immense natural resistance to fibrous mechanites and sensory mechanites via a strong metaphysical bond with a colony mirelung.</description>
+        <iconPath>FabledCervidae/UI/Icons/Genes/Gene_MirelungVitality</iconPath>
+        <randomChosen>false</randomChosen>
+        <displayOrderInCategory>50</displayOrderInCategory>
+        <selectionWeight>0</selectionWeight>
+        <biostatCpx>0</biostatCpx>
+        <makeImmuneTo>
+            <li>FibrousMechanites</li>
+            <li>SensoryMechanites</li>
+        </makeImmuneTo>
+    </GeneDef>
+
+    <GeneDef>
+        <defName>FC_Immunities_Infernihart</defName>
+        <label>infernihart vitality transference</label>
+        <description>Carriers of this gene gain an immense natural resistance to heat stroke and burn injuries via a strong metaphysical bond with a colony infernihart.</description>
+        <iconPath>FabledCervidae/UI/Icons/Genes/Gene_InfernihartVitality</iconPath>
+        <randomChosen>false</randomChosen>
+        <displayOrderInCategory>50</displayOrderInCategory>
+        <selectionWeight>0</selectionWeight>
+        <biostatCpx>0</biostatCpx>
+        <makeImmuneTo>
+            <li>Heatstroke</li>
+            <li>Burn</li>
+        </makeImmuneTo>
+    </GeneDef>
+
+    <GeneDef>
+        <defName>FC_Immunities_Auravine</defName>
+        <label>auravine vitality transference</label>
+        <description>Carriers of this gene gain an immense natural resistance to the plague, flu, and malaria via a strong metaphysical bond with a colony auravine.</description>
+        <iconPath>FabledCervidae/UI/Icons/Genes/Gene_AuravineVitality</iconPath>
+        <randomChosen>false</randomChosen>
+        <displayOrderInCategory>50</displayOrderInCategory>
+        <selectionWeight>0</selectionWeight>
+        <biostatCpx>0</biostatCpx>
+        <makeImmuneTo>
+            <li>Plague</li>
+            <li>Flu</li>
+            <li>Malaria</li>
+        </makeImmuneTo>
+    </GeneDef>
+
+    <GeneDef ParentName="GeneSkinColorOverride">
+        <defName>FC_Skin_Auravine</defName>
+        <label>lavender skin</label>
+        <labelShortAdj>lavender</labelShortAdj>
+        <description>Carriers of this gene, derived from the DNA of an auravine, produce a pigment that turns their skin lavender.</description>
+        <skinColorOverride>(124,98,163)</skinColorOverride>
+        <displayOrderInCategory>200</displayOrderInCategory>
+        <symbolPack>
+            <prefixSymbols>
+                <li><symbol>regal</symbol></li>
+                <li><symbol>violet</symbol></li>
+                <li><symbol>ethereal</symbol></li>
+                <li><symbol>berry</symbol></li>
+                <li><symbol>royal</symbol></li>
+                <li><symbol>mystic</symbol></li>
+                <li><symbol>twilight</symbol></li>
+                <li><symbol>plum</symbol></li>
+                <li><symbol>velvety</symbol></li>
+            </prefixSymbols>
+        </symbolPack>
+    </GeneDef>
+
+    <GeneDef ParentName="GeneSkinColorOverride">
+        <defName>FC_Skin_Infernihart</defName>
+        <label>burnt-orange skin</label>
+        <labelShortAdj>burnt-orange</labelShortAdj>
+        <description>Carriers of this gene, derived from the DNA of an infernihart, produce a pigment that turns their skin burnt-orange.</description>
+        <skinColorOverride>(255, 103, 0)</skinColorOverride>
+        <displayOrderInCategory>201</displayOrderInCategory>
+        <symbolPack>
+            <prefixSymbols>
+                <li><symbol>autumnal</symbol></li>
+                <li><symbol>amber</symbol></li>
+                <li><symbol>warm</symbol></li>
+                <li><symbol>dusty</symbol></li>
+                <li><symbol>fiery</symbol></li>
+                <li><symbol>golden-hour</symbol></li>
+                <li><symbol>ochre</symbol></li>
+                <li><symbol>butterscotch</symbol></li>
+                <li><symbol>honeyed</symbol></li>
+            </prefixSymbols>
+        </symbolPack>
+    </GeneDef>
+
+    <GeneDef ParentName="GeneSkinColorOverride">
+        <defName>FC_Skin_Mirelung</defName>
+        <label>bronze skin</label>
+        <labelShortAdj>bronze</labelShortAdj>
+        <description>Carriers of this gene, derived from the DNA of a mirelung, produce a pigment that turns their skin bronze.</description>
+        <skinColorOverride>(102, 51, 0)</skinColorOverride>
+        <displayOrderInCategory>202</displayOrderInCategory>
+        <symbolPack>
+            <prefixSymbols>
+                <li><symbol>chestnut</symbol></li>
+                <li><symbol>sienna</symbol></li>
+                <li><symbol>grounded</symbol></li>
+                <li><symbol>grainy</symbol></li>
+                <li><symbol>toffee</symbol></li>
+                <li><symbol>caramel</symbol></li>
+                <li><symbol>burnished</symbol></li>
+                <li><symbol>dappled</symbol></li>
+                <li><symbol>tawny</symbol></li>
+            </prefixSymbols>
+        </symbolPack>
+    </GeneDef>
+
+    <GeneDef ParentName="GeneSkinColorOverride">
+        <defName>FC_Skin_Scire</defName>
+        <label>blue skin</label>
+        <labelShortAdj>blue</labelShortAdj>
+        <description>Carriers of this gene, derived from the DNA of a scire, produce a pigment that turns their skin blue.</description>
+        <skinColorOverride>(0,150,252)</skinColorOverride>
+        <displayOrderInCategory>203</displayOrderInCategory>
+        <symbolPack>
+            <prefixSymbols>
+                <li><symbol>azure</symbol></li>
+                <li><symbol>cerulean</symbol></li>
+                <li><symbol>electric</symbol></li>
+                <li><symbol>cool</symbol></li>
+                <li><symbol>refreshing</symbol></li>
+                <li><symbol>prismatic</symbol></li>
+                <li><symbol>radiant</symbol></li>
+                <li><symbol>tidal</symbol></li>
+                <li><symbol>glacial</symbol></li>
+            </prefixSymbols>
+        </symbolPack>
+    </GeneDef>
+
+</Defs>
