@@ -52,6 +52,7 @@ Features:
 
     <loadAfter>
         <li>Ludeon.RimWorld</li>
+        <li>ludeon.rimworld.biotech</li>
         <li>brrainz.harmony</li>
         <li>sarg.alphabiomes</li>
         <li>sarg.alphaimplants</li>
