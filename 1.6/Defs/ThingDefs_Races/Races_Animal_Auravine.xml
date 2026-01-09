@@ -69,8 +69,6 @@
                 <ZBiome_AlpineMeadow MayRequire="zylle.morevanillabiomes">0.3</ZBiome_AlpineMeadow>
                 <ZBiome_CloudForest MayRequire="zylle.morevanillabiomes">0.3</ZBiome_CloudForest>
                 <ZBiome_GlacialShield MayRequire="zylle.morevanillabiomes">0.2</ZBiome_GlacialShield>
-                <RG_TemperateGrassland MayRequire="regrowth.botr.core">0.3</RG_TemperateGrassland>
-                <DankPyon_AncientForest MayRequire="dankpyon.medieval.overhaul">0.2</DankPyon_AncientForest>
                 <DankPyon_DarkForest MayRequire="dankpyon.medieval.overhaul">0.2</DankPyon_DarkForest>
             </wildBiomes>
             <renderTree>FC_Animal_FabledCervidae</renderTree>
@@ -180,8 +178,8 @@
         <labelMale>auravine stag</labelMale>
         <labelFemale>auravine hind</labelFemale>
         <race>FC_Auravine</race>
-        <combatPower>250</combatPower>
-        <ecoSystemWeight>0.25</ecoSystemWeight>
+        <combatPower>150</combatPower>
+        <ecoSystemWeight>0.5</ecoSystemWeight>
         <wildGroupSize>
             <min>1</min>
             <max>7</max>

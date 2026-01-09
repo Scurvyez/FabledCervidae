@@ -187,8 +187,8 @@
         <labelMale>infernihart stag</labelMale>
         <labelFemale>infernihart hind</labelFemale>
         <race>FC_Infernihart</race>
-        <combatPower>270</combatPower>
-        <ecoSystemWeight>0.25</ecoSystemWeight>
+        <combatPower>170</combatPower>
+        <ecoSystemWeight>0.5</ecoSystemWeight>
         <wildGroupSize>
             <min>1</min>
             <max>7</max>

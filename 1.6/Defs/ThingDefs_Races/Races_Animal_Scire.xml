@@ -68,8 +68,6 @@
                 <AB_PropaneLakes MayRequire="sarg.alphabiomes">0.25</AB_PropaneLakes>
                 <ZBiome_AlpineMeadow MayRequire="zylle.morevanillabiomes">0.2</ZBiome_AlpineMeadow>
                 <ZBiome_GlacialShield MayRequire="zylle.morevanillabiomes">0.5</ZBiome_GlacialShield>
-                <RG_TemperateGrassland MayRequire="regrowth.botr.core">0.2</RG_TemperateGrassland>
-                <DankPyon_AncientForest MayRequire="dankpyon.medieval.overhaul">0.4</DankPyon_AncientForest>
                 <DankPyon_DarkForest MayRequire="dankpyon.medieval.overhaul">0.2</DankPyon_DarkForest>
             </wildBiomes>
             <renderTree>FC_Animal_FabledCervidae</renderTree>
@@ -179,8 +177,8 @@
         <labelMale>scire stag</labelMale>
         <labelFemale>scire hind</labelFemale>
         <race>FC_Scire</race>
-        <combatPower>210</combatPower>
-        <ecoSystemWeight>0.25</ecoSystemWeight>
+        <combatPower>110</combatPower>
+        <ecoSystemWeight>0.5</ecoSystemWeight>
         <wildGroupSize>
             <min>1</min>
             <max>7</max>

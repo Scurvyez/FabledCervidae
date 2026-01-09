@@ -181,8 +181,8 @@
         <labelMale>mirelung stag</labelMale>
         <labelFemale>mirelung hind</labelFemale>
         <race>FC_Mirelung</race>
-        <combatPower>170</combatPower>
-        <ecoSystemWeight>0.25</ecoSystemWeight>
+        <combatPower>125</combatPower>
+        <ecoSystemWeight>0.5</ecoSystemWeight>
         <wildGroupSize>
             <min>1</min>
             <max>7</max>
